@@ -12,16 +12,23 @@ describe ('test', () => {
 
       })
       it ('input name', () => {
-        QPage.quotationNameInput().type('rerewrw')
+        QPage.quotationNameInput().type('rerewrwsуцddsdwddd4de')
       })
       it ('input name', () => {
         QPage.quotationSelector().click()
 
       })
       it ('input name', () => {
-        QPage.quotationMeasureSelector().click()
+        QPage.addQuotationMeasure().click()
 
       })
+      it ('input name', () => {
+        QPage.buttonAddProduct().click()
 
+      })
+      it ('input name', () => {
+        QPage.productTabHeader().click({force: true})
+
+      })
 
 })
