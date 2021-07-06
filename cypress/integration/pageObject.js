@@ -1,4 +1,9 @@
+export const random_name1 = Math.random().toString(36).substr(2, 5);
+export const random_name2 = Math.random().toString(36).substr(2, 5);
+
 export class quotationsPage {
+
+
 
 
   navigate=() => {
@@ -16,5 +21,6 @@ export class quotationsPage {
   addProductMeasure=() => cy.get('[id^=mat-]').contains('Тонны')
   buttonAddProduct =()=> cy.xpath('/html/body/app-root/app-sidenav/mat-sidenav-container/mat-sidenav-content/div[2]/app-dashboards/mat-card/mat-card-content/app-quotation-list/mat-card/mat-card-content/app-product-create/div/form/div/div/button')
   productTabHeader =()=> cy.get('[id^=mat-]').contains('Список')
-  productInGrid =() => cy.get('mat-cell').contains(' новая котировка №988')
+  productInGrid =() => cy.get('mat-cell').contains(random_name1)
+
 }

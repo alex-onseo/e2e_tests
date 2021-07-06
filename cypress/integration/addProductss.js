@@ -2,6 +2,11 @@ import {
   quotationsPage
 } from './pageObject'
 
+import random_name1 from './pageObject'
+import random_name2 from './pageObject' 
+
+
+
 describe('test', () => {
   const QPage = new quotationsPage;
 
@@ -14,7 +19,7 @@ describe('test', () => {
 
   })
   it('input name', () => {
-    QPage.productNameInput().type(' новая котировка №988')
+    QPage.productNameInput().type(random_name1)
   })
   it('open measure dropdown', () => {
     QPage.productSelector().click()
@@ -45,7 +50,7 @@ describe('test', () => {
     QPage.productInGrid().click()
   })
   it('input name', () => {
-    QPage.productNameInput().click().clear().type(' новая котировка №999')
+    QPage.productNameInput().click().clear().type(random_name2)
   })
   it('click ADD', () => {
     QPage.buttonAddProduct().click()
