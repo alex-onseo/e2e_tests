@@ -14,7 +14,7 @@ describe('test', () => {
 
   })
   it('input name', () => {
-    QPage.productNameInput().type(' новая котировка №88')
+    QPage.productNameInput().type(' новая котировка №988')
   })
   it('open measure dropdown', () => {
     QPage.productSelector().click()
@@ -45,7 +45,7 @@ describe('test', () => {
     QPage.productInGrid().click()
   })
   it('input name', () => {
-    QPage.productNameInput().click().clear().type(' новая котировка №99')
+    QPage.productNameInput().click().clear().type(' новая котировка №999')
   })
   it('click ADD', () => {
     QPage.buttonAddProduct().click()
@@ -53,16 +53,6 @@ describe('test', () => {
   })
     it('check unique alert message', () => {
       QPage.checkUniqueName().should('not.exist')
-  })
-  it('input name', () => {
-    QPage.productNameInput().click().clear().type(' новая котировка №88')
-  })
-  it('click ADD', () => {
-    QPage.buttonAddProduct().click()
-
-  })
-    it('check unique alert message', () => {
-      QPage.checkUniqueName().should('be visible')
   })
 
 })
