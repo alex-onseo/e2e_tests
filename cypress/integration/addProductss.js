@@ -1,6 +1,8 @@
-import {quotationsPage} from './pageObject'
+import {
+  quotationsPage
+} from './pageObject'
 
-describe ('test', () => {
+describe('test', () => {
   const QPage = new quotationsPage;
 
 
@@ -10,25 +12,57 @@ describe ('test', () => {
 
 
 
-      })
-      it ('input name', () => {
-        QPage.quotationNameInput().type('rerewrwsуцddsdwddd4de')
-      })
-      it ('input name', () => {
-        QPage.quotationSelector().click()
+  })
+  it('input name', () => {
+    QPage.productNameInput().type(' новая котировка №88')
+  })
+  it('open measure dropdown', () => {
+    QPage.productSelector().click()
 
-      })
-      it ('input name', () => {
-        QPage.addQuotationMeasure().click()
+  })
+  it('select measure', () => {
+    QPage.addProductMeasure().click()
 
-      })
-      it ('input name', () => {
-        QPage.buttonAddProduct().click()
+  })
+  it('click ADD', () => {
+    QPage.buttonAddProduct().click()
+  })
 
-      })
-      it ('input name', () => {
-        QPage.productTabHeader().click({force: true})
+  it('check unique alert message', () => {
+    QPage.checkUniqueName().should('not.exist')
 
-      })
+  })
+  it('open product list', () => {
+    QPage.productTabHeader().click({
+      force: true
+    })
+
+  })
+  it('check element in the grid', () => {
+    QPage.productInGrid().should('be.visible')
+  })
+  it('click on the element in the grid', () => {
+    QPage.productInGrid().click()
+  })
+  it('input name', () => {
+    QPage.productNameInput().click().clear().type(' новая котировка №99')
+  })
+  it('click ADD', () => {
+    QPage.buttonAddProduct().click()
+
+  })
+    it('check unique alert message', () => {
+      QPage.checkUniqueName().should('not.exist')
+  })
+  it('input name', () => {
+    QPage.productNameInput().click().clear().type(' новая котировка №88')
+  })
+  it('click ADD', () => {
+    QPage.buttonAddProduct().click()
+
+  })
+    it('check unique alert message', () => {
+      QPage.checkUniqueName().should('be visible')
+  })
 
 })
