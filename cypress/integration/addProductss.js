@@ -14,7 +14,7 @@ describe('test', () => {
 
   })
   it('input name', () => {
-    QPage.productNameInput().type(' новая котировка №988')
+    QPage.productNameInput().type(' new product')
   })
   it('open measure dropdown', () => {
     QPage.productSelector().click()
@@ -45,7 +45,7 @@ describe('test', () => {
     QPage.productInGrid().click()
   })
   it('input name', () => {
-    QPage.productNameInput().click().clear().type(' новая котировка №999')
+    QPage.productNameInput().click().clear().type('новый продукт')
   })
   it('click ADD', () => {
     QPage.buttonAddProduct().click()

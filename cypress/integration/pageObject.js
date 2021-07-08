@@ -5,16 +5,26 @@ export class quotationsPage {
     cy.visit("http://ievvmoil03:8082/dashboard/products/list")
   }
   banksLink=() => cy.get('a[href*="banks"]')
-  quotationsLink=() => cy.get('a[href*="quotations"]')
+
   productsLink=() => cy.get('a[href*="products"]')
-  addQuotationLink=() => cy.xpath('//*[@id="Union_8"]')
   addProductLink = () => cy.xpath('/html/body/app-root/app-sidenav/mat-sidenav-container/mat-sidenav-content/div[2]/app-dashboards/mat-card/mat-card-header/div[2]/app-actions/div/a/span[1]/span')
   checkUniqueName =() => cy.get('[id^=cdk]').contains('Продукт с таким названием уже существует в системе')
   productNameInput= () => cy.get('input')
-  quotationNameInput= () => cy.get('input')
-  productSelector= () => cy.xpath('/html/body/app-root/app-sidenav/mat-sidenav-container/mat-sidenav-content/div[2]/app-dashboards/mat-card/mat-card-content/app-quotation-list/mat-card/mat-card-content/app-product-create/div/form/div/mat-form-field[2]/div/div[1]/div[3]')
+  productSelector= () => cy.get('.mat-select-placeholder')
   addProductMeasure=() => cy.get('[id^=mat-]').contains('Тонны')
-  buttonAddProduct =()=> cy.xpath('/html/body/app-root/app-sidenav/mat-sidenav-container/mat-sidenav-content/div[2]/app-dashboards/mat-card/mat-card-content/app-quotation-list/mat-card/mat-card-content/app-product-create/div/form/div/div/button')
+  buttonAddProduct =()=> cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper')
   productTabHeader =()=> cy.get('[id^=mat-]').contains('Список')
-  productInGrid =() => cy.get('mat-cell').contains(' новая котировка №988')
+  productInGrid =() => cy.get('mat-cell').contains(' new product')
+
+  quotationsLink=() => cy.get('[href="/dashboard/quotations"] > .mat-list-item-content > .ng-star-inserted')
+  addQuotationLink=() => cy.get('.container > [tabindex="0"]')
+  quotationNameInput= () => cy.get('#mat-input-2')
+  quotationFullNameInput= () => cy.get('#mat-input-3')
+  quotationButtonAdd = () => cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper')
+  quotationList =() => cy.get('.mat-tab-list > span > .ng-star-inserted').contains('Список')
+  quotationInGrid = () => cy.get('mat-cell').contains(' new_quotation777 Full777')
+  quotationNameEdit= () => cy.get('#mat-input-5')
+  quotationFullNameEdit= () => cy.get('#mat-input-6')
+  quotationEditSave = () => cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper')
+
 }
