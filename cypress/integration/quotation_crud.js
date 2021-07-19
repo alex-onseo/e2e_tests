@@ -15,10 +15,10 @@ describe ('quotation crud', () => {
         QPage.addQuotationLink().click()
       })
       it ('input short name', () => {
-        QPage.quotationNameInput().type('  new_quotation777')
+        QPage.quotationNameInput().type('name')
       })
       it ('input full name', () => {
-        QPage.quotationFullNameInput().type(' Full777')
+        QPage.quotationFullNameInput().type(' full_name')
       })
       it ('click add', () => {
         QPage.quotationButtonAdd().click()
@@ -37,8 +37,8 @@ describe ('quotation crud', () => {
         QPage.quotationFullNameEdit().clear().type(' Full2')
       })
       it ('save edited quotation', () => {
-        QPage.quotationEditSave().click()
-        cy.get('#parent')
+        QPage.quotationEditSave().click({force:true})
+
       })
 
 
