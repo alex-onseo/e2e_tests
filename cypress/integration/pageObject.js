@@ -1,4 +1,4 @@
-export class quotationsPage {
+export class testingPage {
 
 
   navigate=() => {
@@ -27,5 +27,15 @@ export class quotationsPage {
   quotationNameEdit= () => cy.get('#mat-input-4')
   quotationFullNameEdit= () => cy.get('#mat-input-5')
   quotationEditSave = () => cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper')
+//dictionary.ownbanks
+  ownbanksLink =() => cy.get('[href="/dashboard/banks"] > .mat-list-item-content > .ng-star-inserted')
+  addBankLink = () => cy.get('.mat-button-wrapper > span')
+  bankGroupInputField  = () => cy.get('#mat-input-2')
+  bankNameInputField  = () => cy.get('#mat-input-3')
+  bankAddressInputField = () => cy.get('#mat-input-4')
+  bankBicInputField  = () => cy.get('#mat-input-5')
 
+//dictionary.client
+//dictionary.clientBank
+//dictionary.clientAccount
 }

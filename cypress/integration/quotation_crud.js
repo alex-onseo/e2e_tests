@@ -1,43 +1,43 @@
-import {quotationsPage} from './pageObject'
+import { testingPage} from './pageObject'
 
 describe ('quotation crud', () => {
-  const QPage = new quotationsPage;
+    const TPage = new testingPage;
 
 
   it('click add quotation', () => {
-    QPage.navigate()
-    QPage.quotationsLink().click()
+    TPage.navigate()
+      TPage.quotationsLink().click()
 
 
 
       })
       it ('click add', () => {
-        QPage.addQuotationLink().click()
+          TPage.addQuotationLink().click()
       })
       it ('input short name', () => {
-        QPage.quotationNameInput().type('name')
+          TPage.quotationNameInput().type('name')
       })
       it ('input full name', () => {
-        QPage.quotationFullNameInput().type(' full_name')
+          TPage.quotationFullNameInput().type(' full_name')
       })
       it ('click add', () => {
-        QPage.quotationButtonAdd().click()
+          TPage.quotationButtonAdd().click()
       })
       it('return to the grid', () => {
-        QPage.quotationList().click()
+          TPage.quotationList().click()
       })
       it('click on the element in the grid', () => {
-        QPage.quotationInGrid().click({force:true})
+          TPage.quotationInGrid().click({force:true})
 
       })
       it ('input short name', () => {
-        QPage.quotationNameEdit().clear().type('new name2')
+          TPage.quotationNameEdit().clear().type('new name2')
       })
       it ('input full name', () => {
-        QPage.quotationFullNameEdit().clear().type(' Full2')
+          TPage.quotationFullNameEdit().clear().type(' Full2')
       })
       it ('save edited quotation', () => {
-        QPage.quotationEditSave().click({force:true})
+          TPage.quotationEditSave().click({force:true})
 
       })
 

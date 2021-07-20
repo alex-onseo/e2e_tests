@@ -1,58 +1,58 @@
 import {
-  quotationsPage
+    testingPage
 } from './pageObject'
 
 describe('test', () => {
-  const QPage = new quotationsPage;
+  const TPage = new testingPage;
 
 
   it('click add quotation', () => {
-    QPage.navigate()
-    QPage.addProductLink().click()
+    TPage.navigate()
+    TPage.addProductLink().click()
 
 
 
   })
   it('input name', () => {
-    QPage.productNameInput().type(' new product')
+    TPage.productNameInput().type(' new product')
   })
   it('open measure dropdown', () => {
-    QPage.productSelector().click()
+    TPage.productSelector().click()
 
   })
   it('select measure', () => {
-    QPage.addProductMeasure().click()
+    TPage.addProductMeasure().click()
 
   })
   it('click ADD', () => {
-    QPage.buttonAddProduct().click()
+    TPage.buttonAddProduct().click()
   })
 
   it('check unique alert message', () => {
-    QPage.checkUniqueName().should('not.exist')
+    TPage.checkUniqueName().should('not.exist')
 
   })
   it('open product list', () => {
-    QPage.productTabHeader().click({
+    TPage.productTabHeader().click({
       force: true
     })
 
   })
   it('check element in the grid', () => {
-    QPage.productInGrid().should('be.visible')
+    TPage.productInGrid().should('be.visible')
   })
   it('click on the element in the grid', () => {
-    QPage.productInGrid().click()
+    TPage.productInGrid().click()
   })
   it('input name', () => {
-    QPage.productNameInput().click().clear().type('новый продукт')
+    TPage.productNameInput().click().clear().clear().type('новый продукт')
   })
   it('click ADD', () => {
-    QPage.buttonAddProduct().click()
+    TPage.buttonAddProduct().click()
 
   })
-    it('check unique alert message', () => {
-      QPage.checkUniqueName().should('not.exist')
+  it('check unique alert message', () => {
+    TPage.checkUniqueName().should('not.exist')
   })
 
 })
