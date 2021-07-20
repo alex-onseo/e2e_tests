@@ -1,18 +1,18 @@
 import {
-    testingPage
+  testingPage
 } from './pageObject'
 
-describe('test', () => {
-  const TPage = new testingPage;
+describe('product crud', () => {
+      const TPage = new testingPage;
 
 
-  it('click add quotation', () => {
-    TPage.navigate()
-    TPage.addProductLink().click()
+      it('click add quotation', () => {
+        TPage.navigate()
+        TPage.addProductLink().click()
 
 
 
-  })
+      })
   it('input name', () => {
     TPage.productNameInput().type(' new product')
   })
