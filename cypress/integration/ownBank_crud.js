@@ -78,11 +78,11 @@ describe('own bank crud', () => {
   it('find bank account', () => {
     TPage.bankAccinGrid().click({force:true})
   })
-
+  
 
 
   it('delete  bank account', () => {
-    TPage.bankAccDelete().click()
+    cy.wait(4000) ,TPage.bankAccDelete().click()
 
   })
 })
