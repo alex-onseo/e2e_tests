@@ -6,18 +6,18 @@ describe('product crud', () => {
       const TPage = new testingPage;
 
 
-      it('click add quotation', () => {
+  it('open product dictionary', () => {
         TPage.navigate()
-        TPage.addProductLink().click()
-
-
-
+        TPage.productsLink().click()
       })
+  it('click add product', () => {
+                        TPage.addProductLink().click()
+          })
   it('input name', () => {
     TPage.productNameInput().type(' new product')
   })
   it('open measure dropdown', () => {
-    TPage.productSelector().click()
+    TPage.productMeasureSelector().click()
 
   })
   it('select measure', () => {
@@ -45,7 +45,7 @@ describe('product crud', () => {
     TPage.productInGrid().click()
   })
   it('input name', () => {
-    TPage.productNameInput().click().clear().clear().type('новый продукт')
+    TPage.productNameInput().click().clear().type('новый продукт')
   })
   it('click ADD', () => {
     TPage.buttonAddProduct().click()

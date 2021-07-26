@@ -78,7 +78,7 @@ describe('own bank crud', () => {
   it('find bank account', () => {
     TPage.bankAccinGrid().click({force:true})
   })
-  
+
 
 
   it('delete  bank account', () => {

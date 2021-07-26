@@ -2,7 +2,7 @@ export class testingPage {
 
 
   navigate = () => {
-    cy.visit("http://ievvmoil03:8082/dashboard/products/list")
+    cy.visit("http://ievvmoil03:8082/default")
   }
   //dictionary.banks
   banksLink = () => cy.get('a[href*="banks"]')
@@ -11,7 +11,7 @@ export class testingPage {
   addProductLink = () => cy.xpath('/html/body/app-root/app-sidenav/mat-sidenav-container/mat-sidenav-content/div[2]/app-dashboards/mat-card/mat-card-header/div[2]/app-actions/div/a/span[1]/span')
   checkUniqueName = () => cy.get('[id^=cdk]').contains('Продукт с таким названием уже существует в системе')
   productNameInput = () => cy.get('input')
-  productSelector = () => cy.get('.mat-select-placeholder')
+  productMeasureSelector = () => cy.get('.mat-select-placeholder')
   addProductMeasure = () => cy.get('[id^=mat-]').contains('Тонны')
   buttonAddProduct = () => cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper')
   productTabHeader = () => cy.get('[id^=mat-]').contains('Список')
@@ -19,8 +19,10 @@ export class testingPage {
   //dictionary.quotation
   quotationsLink = () => cy.get('[href="/dashboard/quotations"] > .mat-list-item-content > .ng-star-inserted')
   addQuotationLink = () => cy.get('.container > [tabindex="0"]')
-  quotationNameInput = () => cy.get('#mat-input-2')
-  quotationFullNameInput = () => cy.get('#mat-input-3')
+  quotationNameInput = () => cy.get('#mat-input-1')
+  quotationFullNameInput = () => cy.get('#mat-input-2')
+  quotationRegionTypeAhead = () => cy.get('.mat-select-placeholder')
+  addQuotationRegion = () => cy.get('[id^=mat-]').contains('EU reg')
   quotationButtonAdd = () => cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper')
   quotationList = () => cy.get('.mat-tab-list > span > .ng-star-inserted').contains('Список')
   quotationInGrid = () => cy.get('mat-cell').contains('name full_name')
@@ -52,6 +54,15 @@ export class testingPage {
   bankAccDelete = () => cy.get('.btn-cancel > .mat-button-wrapper > .mat-icon').should('be.visible')
 
 
+  //dictionary.region
+  regionLink = () => cy.get('[href="/dashboard/regions"] > .mat-list-item-content > .ng-star-inserted')
+  addRegionLink =() => cy.get('.mat-button-wrapper > span')
+  regionInputField =() => cy.get('#mat-input-1')
+  regionAddButton = () =>cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper')
+  regionList = () => cy.get('.mandatory > span > .ng-star-inserted').contains ('Список')
+  regionInGrid = () => cy.get('.mat-cell > span').contains('US Region')
+  regionGroupEditField = () => cy.get('#mat-input-2')
+  regionEditSave = () => cy.get('.button-container > .mat-focus-indicator')
   //dictionary.client
   //dictionary.clientBank
   //dictionary.clientAccount

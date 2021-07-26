@@ -22,6 +22,12 @@ describe('quotation crud', () => {
   it('input full name', () => {
     TPage.quotationFullNameInput().type(' full_name')
   })
+  it('open region dropdown', () => {
+    cy.wait(1000), TPage.quotationRegionTypeAhead().click()
+  })
+  it('select region', () => {
+    cy.wait(1000), TPage.addQuotationRegion().click({force:true})
+  })
   it('click add', () => {
     TPage.quotationButtonAdd().click()
   })
