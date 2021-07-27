@@ -42,16 +42,16 @@ describe('own bank crud', () => {
     TPage.bankInGrid().click()
   })
   it('edit group', () => {
-    TPage.bankGroupEditField().clear().type('new group')
+    TPage.bankGroupInputField().clear().type('new group')
   })
   it('edit bank name', () => {
-    TPage.bankNameEditField().clear().type('new bank')
+    TPage.bankNameInputField().clear().type('new bank')
   })
   it('edit bank address', () => {
-    TPage.bankAddressEditField().clear().type('new address')
+    TPage.bankAddressInputField().clear().type('new address')
   })
   it('edit BIC/SWIFT', () => {
-    TPage.bankBicEditField().clear().type('990011223344')
+    TPage.bankBicInputField().clear().type('990011223344')
   })
   it('save eddited bank', () => {
     TPage.bankSave().click()
@@ -82,7 +82,7 @@ describe('own bank crud', () => {
 
 
   it('delete  bank account', () => {
-    cy.wait(4000) ,TPage.bankAccDelete().click()
+    cy.wait(2000) ,TPage.bankAccDelete().click()
 
   })
 })

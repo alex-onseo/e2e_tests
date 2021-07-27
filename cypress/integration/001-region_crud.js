@@ -26,10 +26,10 @@ describe('region crud', () => {
         TPage.regionInGrid().click()
       })
       it('edit region name', () => {
-        TPage.regionGroupEditField().clear().type('EU reg')
+        TPage.regionInputField().clear().type('EU reg')
       })
       it('save eddited region name', () => {
         TPage.regionEditSave().click()
       })
-      
+
 })

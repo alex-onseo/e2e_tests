@@ -41,10 +41,10 @@ describe('quotation crud', () => {
 
   })
   it('input short name', () => {
-    TPage.quotationNameEdit().clear().type('new name2')
+    TPage.quotationNameInput().clear().type('new name2')
   })
   it('input full name', () => {
-    TPage.quotationFullNameEdit().clear().type(' Full2')
+    TPage.quotationFullNameInput().clear().type(' Full2')
   })
   it('save edited quotation', () => {
     TPage.quotationEditSave().click({
