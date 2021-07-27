@@ -26,10 +26,10 @@ describe('vessel crud', () => {
         TPage.vesselsInGrid().click()
       })
       it('edit vessel name', () => {
-        TPage.vesselsNameEdit().clear().type('Зоркий')
+        TPage.vesselsNameInput().clear().type('Зоркий')
       })
       it('save eddited vessel name', () => {
-        TPage.vesselsEdditedNameSave().click()
+        TPage.vesselEditSave().click()
       })
 
 })

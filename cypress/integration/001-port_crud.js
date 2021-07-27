@@ -29,7 +29,7 @@ describe('port crud', () => {
         TPage.portNameInput().clear().type('Baltimore')
       })
       it('save eddited region name', () => {
-        TPage.vesselsNameInput().click()
+        TPage.portEditSave().click()
       })
 
 })

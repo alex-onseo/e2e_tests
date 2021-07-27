@@ -56,7 +56,7 @@ export class testingPage {
   regionAddButton = () =>cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper')
   regionList = () => cy.get('.mandatory > span > .ng-star-inserted').contains ('Список')
   regionInGrid = () => cy.get('.mat-cell > span').contains('US Region')
-
+  regionEditSave = () => cy.get('button[type="submit"]').contains(' Coхранить ')
 
 
   //  dictionary.ports
@@ -66,7 +66,7 @@ export class testingPage {
   buttonAddPort = () => cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper > .mat-icon')
   portTabHeader = () => cy.get('[id^=mat-]').contains('Список')
   portInGrid = () => cy.get('mat-cell').contains('Amsterdam')
-
+  portEditSave = () => cy.get('button[type="submit"]').contains(' Coхранить ')
 
 
   //dictionary.vessel
@@ -76,6 +76,7 @@ export class testingPage {
   buttonAddvessels = () => cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper > .mat-icon')
   vesselsTabHeader = () => cy.get('[id^=mat-]').contains('Список')
   vesselsInGrid = () => cy.get('mat-cell').contains('Pinta')
+  vesselEditSave = () => cy.get('button[type="submit"]').contains(' Coхранить ')
 
   //dictionary.client
   clientsLink = () => cy.get('[href="/dashboard/clients"] > .mat-list-item-content > .ng-star-inserted')
@@ -94,8 +95,12 @@ export class testingPage {
   clientAddBankName = () => cy.get(`input[formcontrolname="name"]`)
   clientAddBankSwift = () => cy.get(`input[formcontrolname="bicSwift"]`)
   clientAddBankAddress = () => cy.get(`input[formcontrolname="address"]`)
-  clientBankInGrid = () => cy.get('.cdk-column-iban > .ng-star-inserted').contains('Privat')
+  clientBankInGrid = () => cy.get('.cdk-column-name > .ng-star-inserted').contains('Privat')
+  clientBankEditButton = () => cy.get('.btn-edit')
   clientBankDelete = () => cy.get('.btn-cancel > .mat-button-wrapper > .mat-icon').should('be.visible')
   //dictionary.clientBank
   //dictionary.clientAccount
+
+
+  //test   hover
 }

@@ -1,3 +1,4 @@
+import "cypress-real-events/support";
 import {
   testingPage
 } from './pageObject'
@@ -75,13 +76,32 @@ describe('own client crud', () => {
     TPage.bankAccSave().click()
   })
 
-  // it('find client bank account', () => {
-  //   TPage.clientBankInGrid().click({force:true})
-  // })
-  //
-  // it('delete  bank account', () => {
-  //   cy.wait(2000) ,TPage.clientBankDelete().click()
-  //
-  // })
+  it('find client bank account and click to edit', () => {
+    TPage.clientBankInGrid().realHover()
+    TPage.clientBankEditButton().click()
+
+  })
+  it('click delete client bank account', () => {
+
+      cy.wait(1000) ,TPage.clientBankDelete().click()
+
+  })
+
+  it('add client bank ', () => {
+    TPage.clientAddBank().click()
+  })
+  it('input clients bank name', () => {
+    TPage.clientAddBankName().type('Aval')
+  })
+  it('input clients bank address', () => {
+    TPage.clientAddBankAddress().type('Aval adress')
+  })
+  it('input clients bank BIC/SWIFT', () => {
+    TPage.clientAddBankSwift().type('7897978978')
+  })
+  it('save bank account', () => {
+    TPage.bankAccSave().click()
+  })
+
 
 })
