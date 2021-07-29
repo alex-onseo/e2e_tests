@@ -25,7 +25,7 @@ export class testingPage {
   quotationButtonAdd = () => cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper')
   quotationList = () => cy.get('.mat-tab-list > span > .ng-star-inserted').contains('Список')
   quotationInGrid = () => cy.get('mat-cell').contains('name full_name')
-    quotationEditSave = () => cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper')
+  quotationEditSave = () => cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper')
 
   //dictionary.ownbanks
   ownbanksLink = () => cy.get('[href="/dashboard/banks"] > .mat-list-item-content > .ng-star-inserted')
@@ -137,7 +137,16 @@ export class testingPage {
   inspectionsBankEditButton = () => cy.get('.btn-edit')
   inspectionsBankDelete = () => cy.get('.btn-cancel > .mat-button-wrapper > .mat-icon').should('be.visible')
 
+  //dictionaryIncoterms
+  bodLink = () => cy.get('[href="/dashboard/basis-of-deliveries"] > .mat-list-item-content > .ng-star-inserted')
+  bodsAdd =() => cy.get('.mat-button-wrapper > span').contains('Добавить')
+  bodCostGroupInput =() => cy.get(`input[formcontrolname="costGroup"]`)
+  bodNameInput =() => cy.get(`input[formcontrolname="costName"]`)
+  bodIncotermInput =() => cy.get('.mat-select-arrow-wrapper')
+  bodIncotermSelect = () => cy.get('mat-option')
+  bodAddButton =() => cy.get(`button[type="submit"]`).contains('Добавить')
+  bodList = () => cy.get('.mandatory > span > .ng-star-inserted').contains ('Список')
+  bodInGrid = () => cy.get('mat-cell').contains('BOD #1')
+  bodEditedSave = () => cy.get('.button-container > .mat-focus-indicator')
 
-
-  //test   hover
 }
