@@ -28,7 +28,6 @@ export class testingPage {
     quotationEditSave = () => cy.get('.button-container > .mat-focus-indicator > .mat-button-wrapper')
 
   //dictionary.ownbanks
-  banksLink = () => cy.get('a[href*="banks"]')
   ownbanksLink = () => cy.get('[href="/dashboard/banks"] > .mat-list-item-content > .ng-star-inserted')
   addBankLink = () => cy.get('.mat-button-wrapper > span')
   bankGroupInputField = () => cy.get(`input[formcontrolname="group"]`)
@@ -87,7 +86,6 @@ export class testingPage {
   clientSiteInput  =() => cy.get(`input[formcontrolname="webSite"]`)
   clientAddButton = () => cy.get(`button[type="submit"]`).contains('Добавить')
   clientsList = () => cy.get('.mandatory > span > .ng-star-inserted').contains ('Список')
-  clientAddBankButton = () => cy.get('.actions > .mat-focus-indicator > .mat-button-wrapper > span').contains('Добавить банк')
   clientInGrid = () => cy.get('mat-cell').contains('client #1')
   clientSaveButton = () => cy.get(`button[type="submit"]`).contains(' Coхранить ')
 
@@ -98,8 +96,47 @@ export class testingPage {
   clientBankInGrid = () => cy.get('.cdk-column-name > .ng-star-inserted').contains('Privat')
   clientBankEditButton = () => cy.get('.btn-edit')
   clientBankDelete = () => cy.get('.btn-cancel > .mat-button-wrapper > .mat-icon').should('be.visible')
-  //dictionary.clientBank
-  //dictionary.clientAccount
+
+  //dictionary.insuranceCompany
+  insuranceCompanyLink = () => cy.get('[href="/dashboard/insurance-companies"] > .mat-list-item-content > .ng-star-inserted')
+  insuranceAdd =() => cy.get('.mat-button-wrapper > span')
+  insurancetNameInput =() => cy.get(`input[formcontrolname="legalName"]`)
+  insuranceVatInput =() => cy.get(`input[formcontrolname="vatCode"]`)
+  insuranceAddressInput =() => cy.get(`textarea[formcontrolname="legalAddress"]`)
+  insurancetAddButton = () => cy.get(`button[type="submit"]`).contains('Добавить')
+  insuranceList = () => cy.get('.mandatory > span > .ng-star-inserted').contains ('Список')
+  insuranceInGrid = () => cy.get('mat-cell').contains('insuranceCompany #1')
+  insuranceSaveButton = () => cy.get(`button[type="submit"]`).contains(' Coхранить ')
+
+  insurancetAddBank = () => cy.get('.actions > .mat-focus-indicator > .mat-button-wrapper > .mat-icon > #Add-Icon')
+  insuranceAddBankName = () => cy.get(`input[formcontrolname="name"]`)
+  insuranceAddBankSwift = () => cy.get(`input[formcontrolname="bicSwift"]`)
+  insuranceAddBankAddress = () => cy.get(`input[formcontrolname="address"]`)
+  insuranceBankInGrid = () => cy.get('.cdk-column-name > .ng-star-inserted').contains('Privat')
+  insuranceBankEditButton = () => cy.get('.btn-edit')
+  insuranceBankDelete = () => cy.get('.btn-cancel > .mat-button-wrapper > .mat-icon').should('be.visible')
+
+  //dictionary.inspections
+
+  inspectionsLink = () => cy.get('[href="/dashboard/inspections"] > .mat-list-item-content > .ng-star-inserted')
+  inspectionsAdd =() => cy.get('.mat-button-wrapper > span')
+  inspectionsNameInput =() => cy.get(`input[formcontrolname="legalName"]`)
+  inspectionsVatInput =() => cy.get(`input[formcontrolname="vatCode"]`)
+  inspectionsAddressInput =() => cy.get(`textarea[formcontrolname="legalAddress"]`)
+
+  inspectionsAddButton = () => cy.get(`button[type="submit"]`).contains('Добавить')
+  inspectionsList = () => cy.get('.mandatory > span > .ng-star-inserted').contains ('Список')
+  inspectionsInGrid = () => cy.get('mat-cell').contains('inspections #1')
+  inspectionsSaveButton = () => cy.get(`button[type="submit"]`).contains(' Coхранить ')
+
+  inspectionsAddBank = () => cy.get('.actions > .mat-focus-indicator > .mat-button-wrapper > .mat-icon > #Add-Icon')
+  inspectionsAddBankName = () => cy.get(`input[formcontrolname="name"]`)
+  inspectionsAddBankSwift = () => cy.get(`input[formcontrolname="bicSwift"]`)
+  inspectionsAddBankAddress = () => cy.get(`input[formcontrolname="address"]`)
+  inspectionsBankInGrid = () => cy.get('.cdk-column-name > .ng-star-inserted').contains('Privat')
+  inspectionsBankEditButton = () => cy.get('.btn-edit')
+  inspectionsBankDelete = () => cy.get('.btn-cancel > .mat-button-wrapper > .mat-icon').should('be.visible')
+
 
 
   //test   hover

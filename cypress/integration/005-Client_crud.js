@@ -77,18 +77,18 @@ describe('own client crud', () => {
   })
 
   it('find client bank account and click to edit', () => {
-    TPage.clientBankInGrid().realHover()
-    TPage.clientBankEditButton().click()
+    cy.wait(2000), TPage.clientBankInGrid().realHover()
+    cy.wait(2000), TPage.clientBankEditButton().click()
 
   })
   it('click delete client bank account', () => {
 
-      cy.wait(1000) ,TPage.clientBankDelete().click()
+      cy.wait(2000) ,TPage.clientBankDelete().click()
 
   })
 
   it('add client bank ', () => {
-    TPage.clientAddBank().click()
+    cy.wait(1000), TPage.clientAddBank().click()
   })
   it('input clients bank name', () => {
     TPage.clientAddBankName().type('Aval')
