@@ -27,6 +27,9 @@ describe(' insuranceCompany crud', () => {
     it('input insuranceCompany VAT', () => {
         TPage.insuranceVatInput().type('01234568')
     })
+    it('input insuranceCompany group', () => {
+        TPage.InsuranceAddGroup().type('new group')
+    })
 
     it('save insuranceCompany', () => {
         TPage.insurancetAddButton().click()
@@ -36,19 +39,22 @@ describe(' insuranceCompany crud', () => {
         TPage.insuranceList().click()
     })
     it('find insuranceCompany  in the list', () => {
-        TPage.insuranceInGrid().should('be.visible')
+        TPage.insuranceInGrid().contains("insuranceCompany #1").should('be.visible')
     })
     it('click found insuranceCompany in the list', () => {
-        TPage.insuranceInGrid().click()
+        TPage.insuranceInGrid().contains("insuranceCompany #1").click()
     })
     it('edit insuranceCompany name', () => {
         TPage.insurancetNameInput().clear().type('новое имя insuranceCompany')
     })
     it('edit insuranceCompany VAT', () => {
-        TPage.insuranceVatInput().clear().type('987654321')
+        TPage.insuranceVatInput().clear()
     })
     it('edit insuranceCompany address', () => {
-        TPage.insuranceAddressInput().clear().type('новый адресс insuranceCompany')
+        TPage.insuranceAddressInput().clear().type('новый адрес insuranceCompany')
+    })
+    it('input insuranceCompany group', () => {
+        TPage.InsuranceAddGroup().clear()
     })
 
     it('save editted insuranceCompany', () => {
@@ -89,10 +95,10 @@ describe(' insuranceCompany crud', () => {
         TPage.insuranceAddBankName().type('Aval')
     })
     it('input insuranceCompany bank address', () => {
-        TPage.insuranceAddBankAddress().type('Aval adress')
+        TPage.insuranceAddBankAddress().clear()
     })
     it('input insuranceCompany bank BIC/SWIFT', () => {
-        TPage.insuranceAddBankSwift().type('7897978978')
+        TPage.insuranceAddBankSwift().clear()
     })
     it('save insuranceCompany account', () => {
         TPage.bankAccSave().click()

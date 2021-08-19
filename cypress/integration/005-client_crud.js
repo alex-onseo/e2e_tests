@@ -53,7 +53,7 @@ describe("own client crud", () => {
     TPage.clientSiteInput().clear().type("новый адрес сайта");
   });
   it("edit client group", () => {
-    TPage.clientGroupInput().clear().type("группа №2 ");
+    TPage.clientGroupInput().clear();
   });
   it("save edited client", () => {
     TPage.clientSaveButton().click();

@@ -161,11 +161,12 @@ export class testingPage {
   insuranceVatInput = () => cy.get(`input[formcontrolname="vatCode"]`);
   insuranceAddressInput = () =>
     cy.get(`textarea[formcontrolname="legalAddress"]`);
+  InsuranceAddGroup = () => cy.get(`input[formcontrolname="groupName"]`);
   insurancetAddButton = () =>
     cy.get(`button[type="submit"]`).contains("Добавить");
   insuranceList = () =>
     cy.get(".mandatory > span > .ng-star-inserted").contains("Список");
-  insuranceInGrid = () => cy.get("mat-cell").contains("insuranceCompany #1");
+  insuranceInGrid = () => cy.get("[class^=mat-cell]");
   insuranceSaveButton = () =>
     cy.get(`button[type="submit"]`).contains(" Coхранить ");
 
@@ -195,12 +196,13 @@ export class testingPage {
   inspectionsVatInput = () => cy.get(`input[formcontrolname="vatCode"]`);
   inspectionsAddressInput = () =>
     cy.get(`textarea[formcontrolname="legalAddress"]`);
+  inspectionsAddGroup = () => cy.get(`input[formcontrolname="groupName"]`);
 
   inspectionsAddButton = () =>
     cy.get(`button[type="submit"]`).contains("Добавить");
   inspectionsList = () =>
     cy.get(".mandatory > span > .ng-star-inserted").contains("Список");
-  inspectionsInGrid = () => cy.get("mat-cell").contains("inspections #1");
+  inspectionsInGrid = () => cy.get("[class^=mat-cell]");
   inspectionsSaveButton = () =>
     cy.get(`button[type="submit"]`).contains(" Coхранить ");
 
