@@ -30,6 +30,9 @@ describe(' insuranceCompany crud', () => {
     it('input insuranceCompany group', () => {
         TPage.InsuranceAddGroup().type('new group')
     })
+    it('click outside', () => {
+        TPage.insuranceVatInput().click()
+    });
 
     it('save insuranceCompany', () => {
         TPage.insurancetAddButton().click()
@@ -56,6 +59,9 @@ describe(' insuranceCompany crud', () => {
     it('input insuranceCompany group', () => {
         TPage.InsuranceAddGroup().clear()
     })
+    it('click outside', () => {
+        TPage.insuranceVatInput().click()
+    });
 
     it('save editted insuranceCompany', () => {
         TPage.insuranceSaveButton().click()

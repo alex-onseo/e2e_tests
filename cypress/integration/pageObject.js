@@ -129,13 +129,13 @@ export class testingPage {
   clientAddressInput = () => cy.get(`textarea[formcontrolname="legalAddress"]`);
   clientSiteInput = () => cy.get(`input[formcontrolname="webSite"]`);
   clientGroupInput = () => cy.get(`input[formcontrolname="groupName"]`);
-  clientAddButton = () => cy.get(`button[type="submit"]`).contains("Добавить");
+  clientAddButton = () => cy.get(`button[type="submit"]`);
   clientsList = () =>
     cy.get(".mandatory > span > .ng-star-inserted").contains("Список");
   clientInGrid = () => cy.get("[class^=mat-cell]");
   clientSaveButton = () =>
-    cy.get(`button[type="submit"]`).contains(" Coхранить ");
-
+    cy.get(`button[type="submit"]`);
+  clickOutside = () => cy.get('mat-card-header-text')
   clientAddBank = () =>
     cy.get(
       ".actions > .mat-focus-indicator > .mat-button-wrapper > .mat-icon > #Add-Icon"

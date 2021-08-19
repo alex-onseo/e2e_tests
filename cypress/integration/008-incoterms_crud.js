@@ -16,6 +16,7 @@ describe('bod crud', () => {
     it('input bod group', () => {
         TPage.bodCostGroupInput().type('BOD group 1')
     })
+
     it('input bod name', () => {
         TPage.bodNameInput().type('BOD #1')
     })

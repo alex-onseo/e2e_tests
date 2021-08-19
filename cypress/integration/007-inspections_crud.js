@@ -30,6 +30,9 @@ describe(' inspections crud', () => {
     it('input inspections VAT', () => {
         TPage.inspectionsAddGroup().type('inspect group')
     })
+    it('click outside', () => {
+        TPage.inspectionsVatInput().click()
+    });
 
     it('save inspections', () => {
         TPage.inspectionsAddButton().click()
@@ -53,6 +56,9 @@ describe(' inspections crud', () => {
     it('input inspections VAT', () => {
         TPage.inspectionsAddGroup().clear()
     })
+    it('click outside', () => {
+        TPage.inspectionsVatInput().click()
+    });
     it('edit inspections address', () => {
         TPage.inspectionsAddressInput().clear().type('новый адресс inspections')
     })

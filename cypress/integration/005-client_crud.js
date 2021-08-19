@@ -22,12 +22,16 @@ describe("own client crud", () => {
     TPage.clientVatInput().type("01234568");
   });
   it("input client website", () => {
-    TPage.clientSiteInput().type("www.xlient1.site");
+    TPage.clientSiteInput().type("www.client1.site");
   });
   it("input client group", () => {
     TPage.clientGroupInput().type("group#1");
   });
+  it('click outside', () => {
+    TPage.clientSiteInput().click()
+  })
   it("save client", () => {
+    TPage.clientAddButton().should('be.visible')
     TPage.clientAddButton().click();
   });
 
@@ -44,46 +48,23 @@ describe("own client crud", () => {
     TPage.clientNameInput().clear().type("новое имя клиента");
   });
   it("edit client VAT", () => {
-    TPage.clientVatInput().clear().type("987654321");
+    TPage.clientVatInput().clear()
   });
   it("edit client address", () => {
     TPage.clientAddressInput().clear().type("новый адресс клиента");
   });
   it("edit client website", () => {
-    TPage.clientSiteInput().clear().type("новый адрес сайта");
+    TPage.clientSiteInput().clear()
   });
+
+
   it("edit client group", () => {
     TPage.clientGroupInput().clear();
   });
+  it('click outside', () => {
+    TPage.clientSiteInput().click()
+  });
   it("save edited client", () => {
-    TPage.clientSaveButton().click();
-  });
-
-  it("return to clients list", () => {
-    TPage.clientsList().click();
-  });
-  it("find edited client in the list", () => {
-    TPage.clientInGrid().contains("новое имя клиента").should("be.visible");
-  });
-  it("click found edited client in the list", () => {
-    TPage.clientInGrid().contains("новое имя клиента").click();
-  });
-  it("edit client name", () => {
-    TPage.clientNameInput().clear().type("new name #2");
-  });
-  it("edit client VAT", () => {
-    TPage.clientVatInput().clear();
-  });
-  it("edit client address", () => {
-    TPage.clientAddressInput().clear().type("new address #2");
-  });
-  it("edit client website", () => {
-    TPage.clientSiteInput().clear();
-  });
-  it("edit  client group", () => {
-    TPage.clientGroupInput().clear().type("group#1");
-  });
-  it("save editted client", () => {
     TPage.clientSaveButton().click();
   });
 
