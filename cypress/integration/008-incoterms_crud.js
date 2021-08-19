@@ -49,7 +49,7 @@ describe('bod crud', () => {
         TPage.bodIncotermSelect().contains('CPT').click()
     })
     it('save edtited BOD', () => {
-        cy.wait(2000),TPage.bodEditedSave().click()
+        TPage.bodEditedSave().click()
     })
 
 })
