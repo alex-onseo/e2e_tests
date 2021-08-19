@@ -28,16 +28,15 @@ export class testingPage {
   addQuotationLink = () => cy.get('.container > [tabindex="0"]');
   quotationNameInput = () => cy.get(`input[formcontrolname="header"]`);
   quotationFullNameInput = () => cy.get(`input[formcontrolname="fullHeader"]`);
-  quotationRegionTypeAhead = () =>
-    cy.xpath(
-      "/html/body/app-root/app-sidenav/mat-sidenav-container/mat-sidenav-content/div[2]/app-dashboards/mat-card/mat-card-content/app-quotations/mat-card/mat-card-content/app-quotation-create/div/app-quotation-form/form/div/mat-form-field[4]"
-    );
-  addQuotationRegion = () => cy.get("[id^=mat-]").contains("EU reg");
+  quotationRegionTypeAhead = () => cy.get(`mat-select[formcontrolname="regionId"]`);
+  quotationTypeSelector = () => cy.get(`mat-select[formcontrolname="quotationType"]`);
+  addQuotationRegion = () => cy.get("[id^=mat-]");
+  addQuotationType = () => cy.get("[id^=mat-]");
   quotationButtonAdd = () =>
     cy.get(".button-container > .mat-focus-indicator > .mat-button-wrapper");
   quotationList = () =>
     cy.get(".mat-tab-list > span > .ng-star-inserted").contains("Список");
-  quotationInGrid = () => cy.get("mat-cell").contains("name full_name");
+  quotationInGrid = () => cy.get("mat-cell");
   quotationEditSave = () =>
     cy.get(".button-container > .mat-focus-indicator > .mat-button-wrapper");
 
