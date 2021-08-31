@@ -20,7 +20,7 @@ describe('own bank crud', () => {
     TPage.bankGroupInputField().type('group')
   })
   it('input bank name', () => {
-    TPage.bankNameInputField().type('bank')
+    TPage.bankNameInputField().type('bank1')
   })
   it('input bank address', () => {
     TPage.bankAddressInputField().type('address')

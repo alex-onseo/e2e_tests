@@ -27,6 +27,9 @@ describe("own client crud", () => {
   it("input client group", () => {
     TPage.clientGroupInput().type("group#1");
   });
+  it("input client group", () => {
+    TPage.clientAbbreviationInput().type("CL");
+  });
   it('click outside', () => {
     TPage.clientSiteInput().click()
   })
@@ -96,7 +99,7 @@ describe("own client crud", () => {
     cy.wait(1000), TPage.clientAddBank().click();
   });
   it("input clients bank name", () => {
-    TPage.clientAddBankName().type("Aval");
+    TPage.clientAddBankName().type("Aval1");
   });
 
   it("save bank account", () => {

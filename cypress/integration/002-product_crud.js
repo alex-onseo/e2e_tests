@@ -24,6 +24,9 @@ describe('product crud', () => {
     TPage.addProductMeasure().click()
 
   })
+  it('input name', () => {
+    TPage.productAbbreviationInput().type('NP')
+  })
   it('click ADD', () => {
     TPage.buttonAddProduct().click()
   })

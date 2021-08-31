@@ -59,7 +59,7 @@ describe('quotation crud', () => {
     cy.wait(1000), TPage.quotationRegionTypeAhead().click()
   })
   it('select region', () => {
-    cy.wait(1000), TPage.addQuotationRegion().contains('US reg').click({force:true})
+    cy.wait(1000), TPage.addQuotationRegion().contains('EU reg').click({force:true})
   })
   it('select type', () => {
     cy.wait(1000), TPage.quotationTypeSelector().click({force:true})

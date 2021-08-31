@@ -4,17 +4,15 @@ export class testingPage {
   };
   //dictionary.product
   productsLink = () => cy.get('a[href*="products"]');
-  addProductLink = () =>
-    cy.xpath(
-      "/html/body/app-root/app-sidenav/mat-sidenav-container/mat-sidenav-content/div[2]/app-dashboards/mat-card/mat-card-header/div[2]/app-actions/div/a/span[1]/span"
-    );
+  addProductLink = () =>cy.get(".mat-button-wrapper > span");
   checkUniqueName = () =>
     cy
       .get("[id^=cdk]")
       .contains("Продукт с таким названием уже существует в системе");
-  productNameInput = () => cy.get("input");
+  productNameInput = () => cy.get(`input[formcontrolname="name"]`);
   productMeasureSelector = () => cy.get(".mat-select-placeholder");
   addProductMeasure = () => cy.get("[id^=mat-]").contains("Тонны");
+  productAbbreviationInput = () =>  cy.get(`input[formcontrolname="abbreviation"]`);
   buttonAddProduct = () =>
     cy.get(".button-container > .mat-focus-indicator > .mat-button-wrapper");
   productTabHeader = () => cy.get("[id^=mat-]").contains("Список");
@@ -128,6 +126,7 @@ export class testingPage {
   clientAddressInput = () => cy.get(`textarea[formcontrolname="legalAddress"]`);
   clientSiteInput = () => cy.get(`input[formcontrolname="webSite"]`);
   clientGroupInput = () => cy.get(`input[formcontrolname="groupName"]`);
+  clientAbbreviationInput = () =>  cy.get(`input[formcontrolname="abbreviation"]`)
   clientAddButton = () => cy.get(`button[type="submit"]`);
   clientsList = () =>
     cy.get(".mandatory > span > .ng-star-inserted").contains("Список");
