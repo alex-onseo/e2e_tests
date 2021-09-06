@@ -13,10 +13,10 @@ describe("own client crud", () => {
   });
 
   it("input client name", () => {
-    TPage.clientNameInput().type("client #1");
+    TPage.clientNameInput().type("Alex client #1");
   });
   it("input client address", () => {
-    TPage.clientAddressInput().type("client 1 address");
+    TPage.clientAddressInput().type("Alex client 1 address");
   });
   it("input client VAT", () => {
     TPage.clientVatInput().type("01234568");
@@ -25,10 +25,10 @@ describe("own client crud", () => {
     TPage.clientSiteInput().type("www.client1.site");
   });
   it("input client group", () => {
-    TPage.clientGroupInput().type("group#1");
+    TPage.clientGroupInput().type("Alex group#1");
   });
   it("input client group", () => {
-    TPage.clientAbbreviationInput().type("CL");
+    TPage.clientAbbreviationInput().type("Alex CL");
   });
   it('click outside', () => {
     TPage.clientSiteInput().click()
@@ -42,13 +42,13 @@ describe("own client crud", () => {
     TPage.clientsList().click();
   });
   it("find client in the list", () => {
-    TPage.clientInGrid().contains("client #1").should("be.visible");
+    TPage.clientInGrid().contains("Alex client #1").should("be.visible");
   });
   it("click found client in the list", () => {
-    TPage.clientInGrid().contains("client #1").click();
+    TPage.clientInGrid().contains("Alex client #1").click();
   });
   it("edit client name", () => {
-    TPage.clientNameInput().clear().type("новое имя клиента");
+    TPage.clientNameInput().clear().type("Alex новое имя клиента");
   });
   it("edit client VAT", () => {
     TPage.clientVatInput().clear()
@@ -75,7 +75,7 @@ describe("own client crud", () => {
     TPage.clientAddBank().click();
   });
   it("input clients bank name", () => {
-    TPage.clientAddBankName().type("Privat");
+    TPage.clientAddBankName().type("Alex Privat");
   });
   it("input clients bank address", () => {
     TPage.clientAddBankAddress().type("Privat adress");
@@ -88,7 +88,7 @@ describe("own client crud", () => {
   });
 
   it("find client bank account and click to edit", () => {
-    cy.wait(2000), TPage.clientBankInGrid().realHover();
+    cy.wait(2000), TPage.clientBankInGrid().contains("Alex Privat").realHover();
     cy.wait(2000), TPage.clientBankEditButton().click();
   });
   it("click delete client bank account", () => {
@@ -99,10 +99,18 @@ describe("own client crud", () => {
     cy.wait(1000), TPage.clientAddBank().click();
   });
   it("input clients bank name", () => {
-    TPage.clientAddBankName().type("Aval1");
+    TPage.clientAddBankName().type("Alex Aval");
   });
+
 
   it("save bank account", () => {
     TPage.bankAccSave().click();
+  });
+  it("find client bank account and click to edit", () => {
+    cy.wait(2000), TPage.clientBankInGrid().contains("Alex Aval").realHover();
+    cy.wait(2000), TPage.clientBankEditButton().click();
+  });
+  it("click delete client bank account", () => {
+    cy.wait(2000), TPage.clientBankDelete().click();
   });
 });

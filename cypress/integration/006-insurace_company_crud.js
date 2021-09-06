@@ -19,16 +19,16 @@ describe(' insuranceCompany crud', () => {
     })
 
     it('input insuranceCompany  name', () => {
-        TPage.insurancetNameInput().type('insuranceCompany #1')
+        TPage.insurancetNameInput().type('Alex insuranceCompany #1')
     })
     it('input insuranceCompany  address', () => {
-        TPage.insuranceAddressInput().type('insuranceCompany 1 address')
+        TPage.insuranceAddressInput().type('Alex insuranceCompany 1 address')
     })
     it('input insuranceCompany VAT', () => {
         TPage.insuranceVatInput().type('01234568')
     })
     it('input insuranceCompany group', () => {
-        TPage.InsuranceAddGroup().type('new group')
+        TPage.InsuranceAddGroup().type('Alex new group')
     })
     it('click outside', () => {
         TPage.insuranceVatInput().click()
@@ -42,13 +42,13 @@ describe(' insuranceCompany crud', () => {
         TPage.insuranceList().click()
     })
     it('find insuranceCompany  in the list', () => {
-        TPage.insuranceInGrid().contains("insuranceCompany #1").should('be.visible')
+        TPage.insuranceInGrid().contains("Alex insuranceCompany #1").should('be.visible')
     })
     it('click found insuranceCompany in the list', () => {
-        TPage.insuranceInGrid().contains("insuranceCompany #1").click()
+        TPage.insuranceInGrid().contains("Alex insuranceCompany #1").click()
     })
     it('edit insuranceCompany name', () => {
-        TPage.insurancetNameInput().clear().type('новое имя insuranceCompany')
+        TPage.insurancetNameInput().clear().type('Alex новое имя insuranceCompany')
     })
     it('edit insuranceCompany VAT', () => {
         TPage.insuranceVatInput().clear()
@@ -71,7 +71,7 @@ describe(' insuranceCompany crud', () => {
         TPage.insurancetAddBank().click()
     })
     it('input insuranceCompany bank name', () => {
-        TPage.insuranceAddBankName().type('Privat')
+        TPage.insuranceAddBankName().type('Alex Privat')
     })
     it('input insuranceCompany bank address', () => {
         TPage.insuranceAddBankAddress().type('Privat address')
@@ -84,7 +84,7 @@ describe(' insuranceCompany crud', () => {
     })
 
     it('find insuranceCompany bank account and click to edit', () => {
-        cy.wait(2000), TPage.insuranceBankInGrid().realHover()
+        cy.wait(2000), TPage.insuranceBankInGrid().contains("Alex Privat").realHover()
         cy.wait(2000), TPage.insuranceBankEditButton().click()
 
     })
@@ -98,7 +98,7 @@ describe(' insuranceCompany crud', () => {
         cy.wait(1000), TPage.insurancetAddBank().click()
     })
     it('input insuranceCompany bank name', () => {
-        TPage.insuranceAddBankName().type('Aval')
+        TPage.insuranceAddBankName().type('Alex Aval')
     })
     it('input insuranceCompany bank address', () => {
         TPage.insuranceAddBankAddress().clear()
@@ -108,6 +108,16 @@ describe(' insuranceCompany crud', () => {
     })
     it('save insuranceCompany account', () => {
         TPage.bankAccSave().click()
+    })
+    it('find insuranceCompany bank account and click to edit', () => {
+        cy.wait(2000), TPage.insuranceBankInGrid().contains("Alex Aval").realHover()
+        cy.wait(2000), TPage.insuranceBankEditButton().click()
+
+    })
+    it('click delete insuranceCompany bank account', () => {
+
+        cy.wait(2000) ,TPage.insuranceBankDelete().click()
+
     })
 
 

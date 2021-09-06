@@ -14,18 +14,18 @@ describe('product crud', () => {
                         TPage.addProductLink().click()
           })
   it('input name', () => {
-    TPage.productNameInput().type(' new product')
+    TPage.productNameInput().type('Alex new product')
   })
   it('open measure dropdown', () => {
     TPage.productMeasureSelector().click()
 
   })
   it('select measure', () => {
-    TPage.addProductMeasure().click()
+    TPage.addProductMeasure().contains("Тонны").click()
 
   })
   it('input name', () => {
-    TPage.productAbbreviationInput().type('NP')
+    TPage.productAbbreviationInput().type('Alex NP')
   })
   it('click ADD', () => {
     TPage.buttonAddProduct().click()
@@ -45,10 +45,21 @@ describe('product crud', () => {
     TPage.productInGrid().should('be.visible')
   })
   it('click on the element in the grid', () => {
-    TPage.productInGrid().click()
+    TPage.productInGrid().contains(" new product").click()
   })
   it('input name', () => {
-    TPage.productNameInput().click().clear().type('новый продукт')
+    TPage.productNameInput().click().clear()
+  })
+  it('input name', () => {
+    TPage.productNameInput().click().clear().type('Alex новый продукт')
+  })
+  it('open measure dropdown', () => {
+    TPage.productMeasureEdit().click()
+
+  })
+  it('select measure', () => {
+    TPage.editProductMeasure().contains("Баррели").click()
+
   })
   it('click ADD', () => {
     TPage.buttonAddProduct().click()

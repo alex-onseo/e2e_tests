@@ -17,17 +17,17 @@ describe('quotation crud', () => {
     TPage.addQuotationLink().click()
   })
   it('input short name', () => {
-    TPage.quotationNameInput().type('name')
+    TPage.quotationNameInput().type('Alex name')
   })
   it('input full name', () => {
-    TPage.quotationFullNameInput().type(' full_name')
+    TPage.quotationFullNameInput().clear().type('Alex full_name')
   })
   it('open region dropdown', () => {
     cy.wait(1000), TPage.quotationRegionTypeAhead().click()
   })
 
   it('select region', () => {
-    cy.wait(1000), TPage.addQuotationRegion().contains("EU reg").click({force:true})
+    cy.wait(1000), TPage.addQuotationRegion().contains("Alex EU reg").click({force:true})
   })
   it('select type', () => {
     cy.wait(1000), TPage.quotationTypeSelector().click({force:true})
@@ -44,22 +44,22 @@ describe('quotation crud', () => {
     TPage.quotationList().click()
   })
   it('click on the element in the grid', () => {
-    TPage.quotationInGrid().contains("name full_name").click({
+    TPage.quotationInGrid().contains("Alex full_name").click({
       force: true
     })
 
   })
   it('input short name', () => {
-    TPage.quotationNameInput().clear().type('new name2')
+    TPage.quotationNameInput().clear().type('Alex new name2')
   })
   it('input full name', () => {
-    TPage.quotationFullNameInput().clear().type(' Full2')
+    TPage.quotationFullNameInput().clear().type('Alex Full2')
   })
   it('open region dropdown', () => {
     cy.wait(1000), TPage.quotationRegionTypeAhead().click()
   })
   it('select region', () => {
-    cy.wait(1000), TPage.addQuotationRegion().contains('EU reg').click({force:true})
+    cy.wait(1000), TPage.addQuotationRegion().contains('Alex EU reg').click({force:true})
   })
   it('select type', () => {
     cy.wait(1000), TPage.quotationTypeSelector().click({force:true})

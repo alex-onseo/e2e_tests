@@ -14,7 +14,7 @@ describe('region crud', () => {
         TPage.addRegionLink().click()
       })
       it('input region name', () => {
-        TPage.regionInputField().type('US Region')
+        TPage.regionInputField().type('Alex US Region')
       })
       it('save region name', () => {
         TPage.regionAddButton().click()
@@ -23,10 +23,10 @@ describe('region crud', () => {
         TPage.regionList().click()
       })
       it('click on the element in the grid', () => {
-        TPage.regionInGrid().click()
+        TPage.regionInGrid().contains("Alex US Region").click()
       })
       it('edit region name', () => {
-        TPage.regionInputField().clear().type('EU reg')
+        TPage.regionInputField().clear().type('Alex EU reg')
       })
       it('save eddited region name', () => {
         TPage.regionEditSave().click()

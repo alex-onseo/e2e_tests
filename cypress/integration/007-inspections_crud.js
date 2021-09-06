@@ -19,7 +19,7 @@ describe(' inspections crud', () => {
     })
 
     it('input inspections  name', () => {
-        TPage.inspectionsNameInput().type('inspections #1')
+        TPage.inspectionsNameInput().type('Alex inspections #1')
     })
     it('input inspections  address', () => {
         TPage.inspectionsAddressInput().type('inspections 1 address')
@@ -28,7 +28,7 @@ describe(' inspections crud', () => {
         TPage.inspectionsVatInput().type('01234568')
     })
     it('input inspections VAT', () => {
-        TPage.inspectionsAddGroup().type('inspect group')
+        TPage.inspectionsAddGroup().type('Alex inspect group')
     })
     it('click outside', () => {
         TPage.inspectionsVatInput().click()
@@ -42,13 +42,13 @@ describe(' inspections crud', () => {
         TPage.inspectionsList().click()
     })
     it('find inspections  in the list', () => {
-        TPage.inspectionsInGrid().contains("inspections #1").should('be.visible')
+        TPage.inspectionsInGrid().contains("Alex inspections #1").should('be.visible')
     })
     it('click found inspections in the list', () => {
-        TPage.inspectionsInGrid().contains("inspections #1").click()
+        TPage.inspectionsInGrid().contains("Alex inspections #1").click()
     })
     it('edit inspections name', () => {
-        TPage.inspectionsNameInput().clear().type('новое имя inspections')
+        TPage.inspectionsNameInput().clear().type('Alex новое имя inspections')
     })
     it('edit inspections VAT', () => {
         TPage.inspectionsVatInput().clear()
@@ -60,7 +60,7 @@ describe(' inspections crud', () => {
         TPage.inspectionsVatInput().click()
     });
     it('edit inspections address', () => {
-        TPage.inspectionsAddressInput().clear().type('новый адресс inspections')
+        TPage.inspectionsAddressInput().clear().type('Alex новый адресс inspections')
     })
 
     it('save edited inspections', () => {
@@ -71,7 +71,7 @@ describe(' inspections crud', () => {
         TPage.inspectionsAddBank().click()
     })
     it('input inspections bank name', () => {
-        TPage.inspectionsAddBankName().type('Privat')
+        TPage.inspectionsAddBankName().type('Alex Privat')
     })
     it('input inspections bank address', () => {
         TPage.inspectionsAddBankAddress().type('Privat address')
@@ -84,7 +84,7 @@ describe(' inspections crud', () => {
     })
 
     it('find inspections bank account and click to edit', () => {
-        cy.wait(2000), TPage.inspectionsBankInGrid().realHover()
+        cy.wait(2000), TPage.inspectionsBankInGrid().contains("Alex Privat").realHover()
         cy.wait(2000), TPage.inspectionsBankEditButton().click()
 
     })
@@ -98,7 +98,7 @@ describe(' inspections crud', () => {
         cy.wait(1000), TPage.clientAddBank().click()
     })
     it('input inspectionsCompany bank name', () => {
-        TPage.inspectionsAddBankName().type('Aval')
+        TPage.inspectionsAddBankName().type('Alex Aval')
     })
     it('input inspectionsCompany bank address', () => {
         TPage.inspectionsAddBankAddress().clear()
@@ -108,6 +108,16 @@ describe(' inspections crud', () => {
     })
     it('save inspectionsCompany account', () => {
         TPage.bankAccSave().click()
+    })
+    it('find inspections bank account and click to edit', () => {
+        cy.wait(2000), TPage.inspectionsBankInGrid().contains("Alex Aval").realHover()
+        cy.wait(2000), TPage.inspectionsBankEditButton().click()
+
+    })
+    it('click delete inspections bank account', () => {
+
+        cy.wait(2000) ,TPage.inspectionsBankDelete().click()
+
     })
 
 

@@ -17,10 +17,10 @@ describe('own bank crud', () => {
     TPage.addBankLink().click()
   })
   it('input group', () => {
-    TPage.bankGroupInputField().type('group')
+    TPage.bankGroupInputField().type('Alex group')
   })
   it('input bank name', () => {
-    TPage.bankNameInputField().type('bank1')
+    TPage.bankNameInputField().type('Alex bank1')
   })
   it('input bank address', () => {
     TPage.bankAddressInputField().type('address')
@@ -36,16 +36,16 @@ describe('own bank crud', () => {
     TPage.bankList().click()
   })
   it('find bank in the list', () => {
-    TPage.bankInGrid().should('be.visible')
+    TPage.bankInGrid().contains("Alex bank1").should('be.visible')
   })
   it('click found bank in the list', () => {
-    TPage.bankInGrid().click()
+    TPage.bankInGrid().contains("Alex bank1").click()
   })
   it('edit group', () => {
-    TPage.bankGroupInputField().clear().type('new group')
+    TPage.bankGroupInputField().clear().type('Alex новая группа')
   })
   it('edit bank name', () => {
-    TPage.bankNameInputField().clear().type('new bank')
+    TPage.bankNameInputField().clear().type('Alex новый банк')
   })
   it('edit bank address', () => {
     TPage.bankAddressInputField().clear().type('new address')
@@ -63,11 +63,11 @@ describe('own bank crud', () => {
   it('input account Iban', () => {
     TPage.bankAccIbanInputField().type('UA123456789')
   })
-  it('input bank name', () => {
+  it('input bank currency', () => {
     TPage.bankAccCurrencyField().type('UAH')
   })
   it('input bank address', () => {
-    TPage.bankAccBankField().type('Bank_1')
+    TPage.bankAccBankField().type('Alex Bank_1')
   })
   it('input BIC/SWIFT', () => {
     TPage.bankAccSwiftField().type('0123456')
@@ -76,7 +76,7 @@ describe('own bank crud', () => {
     TPage.bankAccSave().click()
   })
   it('find bank account', () => {
-    TPage.bankAccinGrid().click({force:true})
+    TPage.bankAccinGrid().contains("UA123456789").click({force:true})
   })
 
 

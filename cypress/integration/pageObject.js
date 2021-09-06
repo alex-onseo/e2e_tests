@@ -10,14 +10,15 @@ export class testingPage {
       .get("[id^=cdk]")
       .contains("Продукт с таким названием уже существует в системе");
   productNameInput = () => cy.get(`input[formcontrolname="name"]`);
-  productMeasureSelector = () => cy.get(".mat-select-placeholder");
-  addProductMeasure = () => cy.get("[id^=mat-]").contains("Тонны");
+  productMeasureSelector = () => cy.get(`mat-select[formcontrolname="measure"]`);
+  addProductMeasure = () => cy.get("[id^=mat-]");
   productAbbreviationInput = () =>  cy.get(`input[formcontrolname="abbreviation"]`);
   buttonAddProduct = () =>
     cy.get(".button-container > .mat-focus-indicator > .mat-button-wrapper");
   productTabHeader = () => cy.get("[id^=mat-]").contains("Список");
-  productInGrid = () => cy.get("mat-cell").contains(" new product");
-
+  productInGrid = () => cy.get("mat-cell");
+  productMeasureEdit = ()=> cy.get(`mat-select[formcontrolname="measure"]`);
+  editProductMeasure = () => cy.get("[id^=mat-]")
   //dictionary.quotation
   quotationsLink = () =>
     cy.get(
@@ -50,7 +51,7 @@ export class testingPage {
   bankBicInputField = () => cy.get(`input[formcontrolname="bicSwift"]`);
   bankAddButton = () => cy.get(".button-container > .mat-focus-indicator");
   bankList = () => cy.get(".mandatory > span > .ng-star-inserted");
-  bankInGrid = () => cy.get("mat-cell").contains("bank");
+  bankInGrid = () => cy.get("mat-cell");
   bankSave = () =>
     cy.get(".button-container > .mat-focus-indicator > .mat-button-wrapper");
   bankAddAccount = () =>
@@ -63,7 +64,7 @@ export class testingPage {
   bankAccSwiftField = () => cy.get(`input[formcontrolname="bankSwift"]`);
   bankAccSave = () => cy.get(".btn-save > .mat-button-wrapper > .mat-icon");
   bankAccinGrid = () =>
-    cy.get(".cdk-column-iban > .ng-star-inserted").contains("UA123456789");
+    cy.get(".cdk-column-iban > .ng-star-inserted");
   bankAccDelete = () =>
     cy
       .get(".btn-cancel > .mat-button-wrapper > .mat-icon")
@@ -80,7 +81,7 @@ export class testingPage {
     cy.get(".button-container > .mat-focus-indicator > .mat-button-wrapper");
   regionList = () =>
     cy.get(".mandatory > span > .ng-star-inserted").contains("Список");
-  regionInGrid = () => cy.get(".mat-cell > span").contains("US Region");
+  regionInGrid = () => cy.get(".mat-cell > span");
   regionEditSave = () =>
     cy.get('button[type="submit"]').contains(" Coхранить ");
 
@@ -96,7 +97,7 @@ export class testingPage {
       ".button-container > .mat-focus-indicator > .mat-button-wrapper > .mat-icon"
     );
   portTabHeader = () => cy.get("[id^=mat-]").contains("Список");
-  portInGrid = () => cy.get("mat-cell").contains("Amsterdam");
+  portInGrid = () => cy.get("mat-cell");
   portEditSave = () => cy.get('button[type="submit"]').contains(" Coхранить ");
 
   //dictionary.vessel
@@ -111,7 +112,7 @@ export class testingPage {
       ".button-container > .mat-focus-indicator > .mat-button-wrapper > .mat-icon"
     );
   vesselsTabHeader = () => cy.get("[id^=mat-]").contains("Список");
-  vesselsInGrid = () => cy.get("mat-cell").contains("Pinta");
+  vesselsInGrid = () => cy.get("mat-cell");
   vesselEditSave = () =>
     cy.get('button[type="submit"]').contains(" Coхранить ");
 
@@ -142,7 +143,7 @@ export class testingPage {
   clientAddBankSwift = () => cy.get(`input[formcontrolname="bicSwift"]`);
   clientAddBankAddress = () => cy.get(`input[formcontrolname="address"]`);
   clientBankInGrid = () =>
-    cy.get(".cdk-column-name > .ng-star-inserted").contains("Privat");
+    cy.get(".cdk-column-name > .ng-star-inserted");
   clientBankEditButton = () => cy.get(".btn-edit");
   clientBankDelete = () =>
     cy
@@ -176,7 +177,7 @@ export class testingPage {
   insuranceAddBankSwift = () => cy.get(`input[formcontrolname="bicSwift"]`);
   insuranceAddBankAddress = () => cy.get(`input[formcontrolname="address"]`);
   insuranceBankInGrid = () =>
-    cy.get(".cdk-column-name > .ng-star-inserted").contains("Privat");
+    cy.get(".cdk-column-name > .ng-star-inserted");
   insuranceBankEditButton = () => cy.get(".btn-edit");
   insuranceBankDelete = () =>
     cy
@@ -212,7 +213,7 @@ export class testingPage {
   inspectionsAddBankSwift = () => cy.get(`input[formcontrolname="bicSwift"]`);
   inspectionsAddBankAddress = () => cy.get(`input[formcontrolname="address"]`);
   inspectionsBankInGrid = () =>
-    cy.get(".cdk-column-name > .ng-star-inserted").contains("Privat");
+    cy.get(".cdk-column-name > .ng-star-inserted");
   inspectionsBankEditButton = () => cy.get(".btn-edit");
   inspectionsBankDelete = () =>
     cy
@@ -232,7 +233,7 @@ export class testingPage {
   bodAddButton = () => cy.get(`button[type="submit"]`).contains("Добавить");
   bodList = () =>
     cy.get(".mandatory > span > .ng-star-inserted").contains("Список");
-  bodInGrid = () => cy.get("mat-cell").contains("BOD #1");
+  bodInGrid = () => cy.get("mat-cell");
   bodEditedSave = () =>
     cy.get(".button-container > .mat-focus-indicator").contains(" Coхранить ");
 }

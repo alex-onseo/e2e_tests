@@ -14,7 +14,7 @@ describe('port crud', () => {
         TPage.addPortLink().click()
       })
       it('input port name', () => {
-        TPage.portNameInput().type('Amsterdam')
+        TPage.portNameInput().type('Alex Amsterdam')
       })
       it('save port name', () => {
         TPage.buttonAddPort().click()
@@ -23,10 +23,10 @@ describe('port crud', () => {
         TPage.portTabHeader().click()
       })
       it('click on the element in the grid', () => {
-        TPage.portInGrid().click()
+        TPage.portInGrid().contains("Alex Amsterdam").click()
       })
       it('edit port name', () => {
-        TPage.portNameInput().clear().type('Baltimore')
+        TPage.portNameInput().clear().type('Alex Baltimore')
       })
       it('save eddited region name', () => {
         TPage.portEditSave().click()

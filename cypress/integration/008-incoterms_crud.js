@@ -14,11 +14,11 @@ describe('bod crud', () => {
         TPage.bodsAdd().click()
     })
     it('input bod group', () => {
-        TPage.bodCostGroupInput().type('BOD group 1')
+        TPage.bodCostGroupInput().type('Alex BOD group 1')
     })
 
     it('input bod name', () => {
-        TPage.bodNameInput().type('BOD #1')
+        TPage.bodNameInput().type('Alex BOD #1')
     })
     it('click input bod incoterm', () => {
         TPage.bodIncotermInput().click()
@@ -35,13 +35,13 @@ describe('bod crud', () => {
     })
 
     it('click on the element in the BOD grid', () => {
-        TPage.bodInGrid().click()
+        TPage.bodInGrid().contains("Alex BOD #1").click()
     })
     it('edit bod group', () => {
-        TPage.bodCostGroupInput().clear().type('Инкотерм группа "№2')
+        TPage.bodCostGroupInput().clear().type('Alex Инкотерм группа "№2')
     })
     it('save bod name', () => {
-        TPage.bodNameInput().clear().type('Инкотерм  "№2')
+        TPage.bodNameInput().clear().type('Alex Инкотерм  "№2')
     })
     it('click input bod incoterm', () => {
         TPage.bodIncotermInput().click()

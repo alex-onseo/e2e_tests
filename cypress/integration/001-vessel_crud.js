@@ -14,7 +14,7 @@ describe('vessel crud', () => {
         TPage.addVesselsLink().click()
       })
       it('input vessel name', () => {
-        TPage.vesselsNameInput().type('Pinta')
+        TPage.vesselsNameInput().type('Alex Pinta')
       })
       it('save vessel name', () => {
         TPage.buttonAddvessels().click()
@@ -23,10 +23,10 @@ describe('vessel crud', () => {
         TPage.vesselsTabHeader().click()
       })
       it('click on the element vessel in the grid', () => {
-        TPage.vesselsInGrid().click()
+        TPage.vesselsInGrid().contains("Alex Pinta").click()
       })
       it('edit vessel name', () => {
-        TPage.vesselsNameInput().clear().type('Зоркий')
+        TPage.vesselsNameInput().clear().type('Alex Зоркий')
       })
       it('save eddited vessel name', () => {
         TPage.vesselEditSave().click()
