@@ -39,7 +39,7 @@ describe(' insuranceCompany crud', () => {
     })
 
     it('return to insuranceCompany  list', () => {
-        TPage.insuranceList().click()
+        TPage.insuranceTabHeader().click()
     })
     it('find insuranceCompany  in the list', () => {
         TPage.insuranceInGrid().contains("Alex insuranceCompany #1").should('be.visible')

@@ -31,7 +31,7 @@ describe('bod crud', () => {
     })
 
     it('return to bod list', () => {
-        TPage.bodList().click()
+        TPage.bodTabHeader().click()
     })
 
     it('click on the element in the BOD grid', () => {

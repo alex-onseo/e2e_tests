@@ -10,6 +10,9 @@ describe('port crud', () => {
         TPage.navigate()
         TPage.portsLink().click()
       })
+      it('open filter tab', () => {
+        TPage.filterButton().click()
+      })
       it('click add port', () => {
         TPage.addPortLink().click()
       })

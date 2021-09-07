@@ -24,9 +24,10 @@ describe('product crud', () => {
     TPage.addProductMeasure().contains("Тонны").click()
 
   })
-  it('input name', () => {
+  it('input abbreviation', () => {
     TPage.productAbbreviationInput().type('Alex NP')
   })
+
   it('click ADD', () => {
     TPage.buttonAddProduct().click()
   })

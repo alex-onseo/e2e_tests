@@ -39,7 +39,7 @@ describe("own client crud", () => {
   });
 
   it("return to clients list", () => {
-    TPage.clientsList().click();
+    TPage.clientsTabHeader().click();
   });
   it("find client in the list", () => {
     TPage.clientInGrid().contains("Alex client #1").should("be.visible");
@@ -62,7 +62,7 @@ describe("own client crud", () => {
 
 
   it("edit client group", () => {
-    TPage.clientGroupInput().clear();
+    TPage.clientGroupInput().clear().type("Alex новое имя group");
   });
   it('click outside', () => {
     TPage.clientSiteInput().click()

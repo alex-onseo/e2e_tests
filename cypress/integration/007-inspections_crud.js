@@ -39,7 +39,7 @@ describe(' inspections crud', () => {
     })
 
     it('return to inspections  list', () => {
-        TPage.inspectionsList().click()
+        TPage.inspectionsTabHeader().click()
     })
     it('find inspections  in the list', () => {
         TPage.inspectionsInGrid().contains("Alex inspections #1").should('be.visible')

@@ -2,6 +2,16 @@ export class testingPage {
   navigate = () => {
     cy.visit("http://ievvmoil03:8082/default");
   };
+  //  filters
+  filterButton = () => cy.get('button[aria-label="Toggle filter"]');
+  filterNameInput = () => cy.get('input[formcontrolname="name"]');
+  filterGroupInput = () => cy.get('input[formcontrolname="groupName"]');
+  filterAbbrevistionInput = () => cy.get('input[formcontrolname="abbreviation"]');
+  filterApplyButton = () => cy.get('.apply-button > .mat-button-wrapper').contains('Применить');
+  filterResetButton = () => cy.get('.mat-accent > .mat-button-wrapper').contains('Сбросить');
+  filteredData = () => cy.get('.cdk-column-legalName > span');
+
+
   //dictionary.product
   productsLink = () => cy.get('a[href*="products"]');
   addProductLink = () =>cy.get(".mat-button-wrapper > span");
@@ -15,7 +25,7 @@ export class testingPage {
   productAbbreviationInput = () =>  cy.get(`input[formcontrolname="abbreviation"]`);
   buttonAddProduct = () =>
     cy.get(".button-container > .mat-focus-indicator > .mat-button-wrapper");
-  productTabHeader = () => cy.get("[id^=mat-]").contains("Список");
+  productTabHeader = () => cy.get(".mat-basic-chip").contains("Список");
   productInGrid = () => cy.get("mat-cell");
   productMeasureEdit = ()=> cy.get(`mat-select[formcontrolname="measure"]`);
   editProductMeasure = () => cy.get("[id^=mat-]")
@@ -33,8 +43,7 @@ export class testingPage {
   addQuotationType = () => cy.get("[id^=mat-]");
   quotationButtonAdd = () =>
     cy.get(".button-container > .mat-focus-indicator > .mat-button-wrapper");
-  quotationList = () =>
-    cy.get(".mat-tab-list > span > .ng-star-inserted").contains("Список");
+  quotationTabHeader = () => cy.get(".mat-basic-chip").contains("Список");
   quotationInGrid = () => cy.get("mat-cell");
   quotationEditSave = () =>
     cy.get(".button-container > .mat-focus-indicator > .mat-button-wrapper");
@@ -50,7 +59,7 @@ export class testingPage {
   bankAddressInputField = () => cy.get(`textarea[formcontrolname="address"]`);
   bankBicInputField = () => cy.get(`input[formcontrolname="bicSwift"]`);
   bankAddButton = () => cy.get(".button-container > .mat-focus-indicator");
-  bankList = () => cy.get(".mandatory > span > .ng-star-inserted");
+  bankTabHeader = () => cy.get(".mat-basic-chip").contains("Список");
   bankInGrid = () => cy.get("mat-cell");
   bankSave = () =>
     cy.get(".button-container > .mat-focus-indicator > .mat-button-wrapper");
@@ -79,8 +88,7 @@ export class testingPage {
   regionInputField = () => cy.get(`input[formcontrolname="name"]`);
   regionAddButton = () =>
     cy.get(".button-container > .mat-focus-indicator > .mat-button-wrapper");
-  regionList = () =>
-    cy.get(".mandatory > span > .ng-star-inserted").contains("Список");
+  regionTabHeader = () => cy.get(".mat-basic-chip").contains("Список");
   regionInGrid = () => cy.get(".mat-cell > span");
   regionEditSave = () =>
     cy.get('button[type="submit"]').contains(" Coхранить ");
@@ -96,7 +104,7 @@ export class testingPage {
     cy.get(
       ".button-container > .mat-focus-indicator > .mat-button-wrapper > .mat-icon"
     );
-  portTabHeader = () => cy.get("[id^=mat-]").contains("Список");
+  portTabHeader = () => cy.get(".mat-basic-chip").contains("Список");
   portInGrid = () => cy.get("mat-cell");
   portEditSave = () => cy.get('button[type="submit"]').contains(" Coхранить ");
 
@@ -111,7 +119,7 @@ export class testingPage {
     cy.get(
       ".button-container > .mat-focus-indicator > .mat-button-wrapper > .mat-icon"
     );
-  vesselsTabHeader = () => cy.get("[id^=mat-]").contains("Список");
+  vesselsTabHeader = () => cy.get(".mat-basic-chip").contains("Список");
   vesselsInGrid = () => cy.get("mat-cell");
   vesselEditSave = () =>
     cy.get('button[type="submit"]').contains(" Coхранить ");
@@ -129,8 +137,7 @@ export class testingPage {
   clientGroupInput = () => cy.get(`input[formcontrolname="groupName"]`);
   clientAbbreviationInput = () =>  cy.get(`input[formcontrolname="abbreviation"]`)
   clientAddButton = () => cy.get(`button[type="submit"]`);
-  clientsList = () =>
-    cy.get(".mandatory > span > .ng-star-inserted").contains("Список");
+  clientsTabHeader = () => cy.get(".mat-basic-chip").contains("Список");
   clientInGrid = () => cy.get("[class^=mat-cell]");
   clientSaveButton = () =>
     cy.get(`button[type="submit"]`);
@@ -163,8 +170,7 @@ export class testingPage {
   InsuranceAddGroup = () => cy.get(`input[formcontrolname="groupName"]`);
   insurancetAddButton = () =>
     cy.get(`button[type="submit"]`).contains("Добавить");
-  insuranceList = () =>
-    cy.get(".mandatory > span > .ng-star-inserted").contains("Список");
+  insuranceTabHeader = () => cy.get(".mat-basic-chip").contains("Список");
   insuranceInGrid = () => cy.get("[class^=mat-cell]");
   insuranceSaveButton = () =>
     cy.get(`button[type="submit"]`).contains(" Coхранить ");
@@ -185,7 +191,6 @@ export class testingPage {
       .should("be.visible");
 
   //dictionary.inspections
-
   inspectionsLink = () =>
     cy.get(
       '[href="/dashboard/inspections"] > .mat-list-item-content > .ng-star-inserted'
@@ -199,8 +204,7 @@ export class testingPage {
 
   inspectionsAddButton = () =>
     cy.get(`button[type="submit"]`).contains("Добавить");
-  inspectionsList = () =>
-    cy.get(".mandatory > span > .ng-star-inserted").contains("Список");
+  inspectionsTabHeader = () => cy.get(".mat-basic-chip").contains("Список");
   inspectionsInGrid = () => cy.get("[class^=mat-cell]");
   inspectionsSaveButton = () =>
     cy.get(`button[type="submit"]`).contains(" Coхранить ");
@@ -231,8 +235,7 @@ export class testingPage {
   bodIncotermInput = () => cy.get(".mat-select-arrow-wrapper");
   bodIncotermSelect = () => cy.get("mat-option");
   bodAddButton = () => cy.get(`button[type="submit"]`).contains("Добавить");
-  bodList = () =>
-    cy.get(".mandatory > span > .ng-star-inserted").contains("Список");
+  bodTabHeader = () => cy.get(".mat-basic-chip").contains("Список");
   bodInGrid = () => cy.get("mat-cell");
   bodEditedSave = () =>
     cy.get(".button-container > .mat-focus-indicator").contains(" Coхранить ");

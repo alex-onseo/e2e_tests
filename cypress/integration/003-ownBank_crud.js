@@ -33,7 +33,7 @@ describe('own bank crud', () => {
   })
 
   it('return to bank list', () => {
-    TPage.bankList().click()
+    TPage.bankTabHeader().click()
   })
   it('find bank in the list', () => {
     TPage.bankInGrid().contains("Alex bank1").should('be.visible')

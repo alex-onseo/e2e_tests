@@ -20,7 +20,7 @@ describe('region crud', () => {
         TPage.regionAddButton().click()
       })
       it('open region list', () => {
-        TPage.regionList().click()
+        TPage.regionTabHeader().click()
       })
       it('click on the element in the grid', () => {
         TPage.regionInGrid().contains("Alex US Region").click()

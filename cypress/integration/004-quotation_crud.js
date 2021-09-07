@@ -41,7 +41,7 @@ describe('quotation crud', () => {
     TPage.quotationButtonAdd().click()
   })
   it('return to the grid', () => {
-    TPage.quotationList().click()
+    TPage.quotationTabHeader().click()
   })
   it('click on the element in the grid', () => {
     TPage.quotationInGrid().contains("Alex full_name").click({
