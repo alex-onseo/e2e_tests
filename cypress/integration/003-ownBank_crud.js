@@ -25,8 +25,11 @@ describe('own bank crud', () => {
   it('input bank address', () => {
     TPage.bankAddressInputField().type('address')
   })
-  it('input BIC/SWIFT', () => {
+  it('input BIC', () => {
     TPage.bankBicInputField().type('0011223344')
+  })
+  it('input SWIFT', () => {
+    TPage.bankSwiftInputField().type('9988776655')
   })
   it('click add bank', () => {
     TPage.bankAddButton().click()
@@ -50,8 +53,11 @@ describe('own bank crud', () => {
   it('edit bank address', () => {
     TPage.bankAddressInputField().clear().type('new address')
   })
-  it('edit BIC/SWIFT', () => {
+  it('edit BIC', () => {
     TPage.bankBicInputField().clear().type('990011223344')
+  })
+  it('edit SWIFT', () => {
+    TPage.bankSwiftInputField().clear().type('770011223344')
   })
   it('save eddited bank', () => {
     TPage.bankSave().click()
@@ -69,7 +75,7 @@ describe('own bank crud', () => {
   it('input bank address', () => {
     TPage.bankAccBankField().type('Alex Bank_1')
   })
-  it('input BIC/SWIFT', () => {
+  it('input account SwiftSWIFT', () => {
     TPage.bankAccSwiftField().type('0123456')
   })
   it('save bank account', () => {

@@ -57,7 +57,8 @@ export class testingPage {
   bankGroupInputField = () => cy.get(`input[formcontrolname="group"]`);
   bankNameInputField = () => cy.get(`input[formcontrolname="name"]`);
   bankAddressInputField = () => cy.get(`textarea[formcontrolname="address"]`);
-  bankBicInputField = () => cy.get(`input[formcontrolname="bicSwift"]`);
+  bankBicInputField = () => cy.get(`input[formcontrolname="bic"]`);
+  bankSwiftInputField = () => cy.get(`input[formcontrolname="swift"]`);
   bankAddButton = () => cy.get(".button-container > .mat-focus-indicator");
   bankTabHeader = () => cy.get(".mat-basic-chip").contains("Список");
   bankInGrid = () => cy.get("mat-cell");
@@ -133,6 +134,7 @@ export class testingPage {
   clientNameInput = () => cy.get(`input[formcontrolname="legalName"]`);
   clientVatInput = () => cy.get(`input[formcontrolname="vatCode"]`);
   clientAddressInput = () => cy.get(`textarea[formcontrolname="legalAddress"]`);
+  clientCorrespondenceInput = () => cy.get(`textarea[formcontrolname="correspondenceAddress"]`);
   clientSiteInput = () => cy.get(`input[formcontrolname="webSite"]`);
   clientGroupInput = () => cy.get(`input[formcontrolname="groupName"]`);
   clientAbbreviationInput = () =>  cy.get(`input[formcontrolname="abbreviation"]`)
@@ -147,7 +149,8 @@ export class testingPage {
       ".actions > .mat-focus-indicator > .mat-button-wrapper > .mat-icon > #Add-Icon"
     );
   clientAddBankName = () => cy.get(`input[formcontrolname="name"]`);
-  clientAddBankSwift = () => cy.get(`input[formcontrolname="bicSwift"]`);
+  clientAddBankSwift = () => cy.get(`input[formcontrolname="swift"]`);
+  clientAddBankBic = () => cy.get(`input[formcontrolname="bic"]`);
   clientAddBankAddress = () => cy.get(`input[formcontrolname="address"]`);
   clientBankInGrid = () =>
     cy.get(".cdk-column-name > .ng-star-inserted");
@@ -167,6 +170,8 @@ export class testingPage {
   insuranceVatInput = () => cy.get(`input[formcontrolname="vatCode"]`);
   insuranceAddressInput = () =>
     cy.get(`textarea[formcontrolname="legalAddress"]`);
+  insurancecorrespondenceAddressInput = () =>
+      cy.get(`textarea[formcontrolname="correspondenceAddress"]`);
   InsuranceAddGroup = () => cy.get(`input[formcontrolname="groupName"]`);
   insurancetAddButton = () =>
     cy.get(`button[type="submit"]`).contains("Добавить");
@@ -180,7 +185,8 @@ export class testingPage {
       ".actions > .mat-focus-indicator > .mat-button-wrapper > .mat-icon > #Add-Icon"
     );
   insuranceAddBankName = () => cy.get(`input[formcontrolname="name"]`);
-  insuranceAddBankSwift = () => cy.get(`input[formcontrolname="bicSwift"]`);
+  insuranceAddBankBic = () => cy.get(`input[formcontrolname="bic"]`);
+  insuranceAddBankSwift = () => cy.get(`input[formcontrolname="swift"]`);
   insuranceAddBankAddress = () => cy.get(`input[formcontrolname="address"]`);
   insuranceBankInGrid = () =>
     cy.get(".cdk-column-name > .ng-star-inserted");
@@ -200,8 +206,9 @@ export class testingPage {
   inspectionsVatInput = () => cy.get(`input[formcontrolname="vatCode"]`);
   inspectionsAddressInput = () =>
     cy.get(`textarea[formcontrolname="legalAddress"]`);
+  inspectionCorrespondenceAddressInput = () =>
+        cy.get(`textarea[formcontrolname="correspondenceAddress"]`);
   inspectionsAddGroup = () => cy.get(`input[formcontrolname="groupName"]`);
-
   inspectionsAddButton = () =>
     cy.get(`button[type="submit"]`).contains("Добавить");
   inspectionsTabHeader = () => cy.get(".mat-basic-chip").contains("Список");
@@ -214,7 +221,8 @@ export class testingPage {
       ".actions > .mat-focus-indicator > .mat-button-wrapper > .mat-icon > #Add-Icon"
     );
   inspectionsAddBankName = () => cy.get(`input[formcontrolname="name"]`);
-  inspectionsAddBankSwift = () => cy.get(`input[formcontrolname="bicSwift"]`);
+  inspectionsAddBankSwift = () => cy.get(`input[formcontrolname="swift"]`);
+  inspectionsAddBankBic = () => cy.get(`input[formcontrolname="bic"]`);
   inspectionsAddBankAddress = () => cy.get(`input[formcontrolname="address"]`);
   inspectionsBankInGrid = () =>
     cy.get(".cdk-column-name > .ng-star-inserted");

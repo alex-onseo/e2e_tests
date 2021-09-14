@@ -10,34 +10,30 @@ describe(' inspections crud', () => {
     it('click inspections link', () => {
         TPage.navigate()
         TPage.inspectionsLink().click()
-
-
-
     })
+
     it('click add new inspections', () => {
         TPage.inspectionsAdd().click()
     })
-
     it('input inspections  name', () => {
         TPage.inspectionsNameInput().type('Alex inspections #1')
     })
-    it('input inspections  address', () => {
+    it('input inspections legal  address', () => {
         TPage.inspectionsAddressInput().type('inspections 1 address')
+    })
+    it('input inspections Correspondence  address', () => {
+        TPage.inspectionCorrespondenceAddressInput().type('inspections Correspondence 1 address')
+    })
+    it('input inspections group', () => {
+        TPage.inspectionsAddGroup().type('Alex inspect group')
     })
     it('input inspections VAT', () => {
         TPage.inspectionsVatInput().type('01234568')
     })
-    it('input inspections VAT', () => {
-        TPage.inspectionsAddGroup().type('Alex inspect group')
-    })
-    it('click outside', () => {
-        TPage.inspectionsVatInput().click()
-    });
 
     it('save inspections', () => {
         TPage.inspectionsAddButton().click()
     })
-
     it('return to inspections  list', () => {
         TPage.inspectionsTabHeader().click()
     })
@@ -50,19 +46,18 @@ describe(' inspections crud', () => {
     it('edit inspections name', () => {
         TPage.inspectionsNameInput().clear().type('Alex новое имя inspections')
     })
+        it('input inspections group', () => {
+        TPage.inspectionsAddGroup().clear().type('Alex group#2')
+    })
     it('edit inspections VAT', () => {
         TPage.inspectionsVatInput().clear()
     })
-    it('input inspections VAT', () => {
-        TPage.inspectionsAddGroup().clear()
+    it('input inspections legal  address', () => {
+        TPage.inspectionsAddressInput().clear().type('новый адресс инспекции')
     })
-    it('click outside', () => {
-        TPage.inspectionsVatInput().click()
-    });
-    it('edit inspections address', () => {
-        TPage.inspectionsAddressInput().clear().type('Alex новый адресс inspections')
+    it('input inspections Correspondence  address', () => {
+        TPage.inspectionCorrespondenceAddressInput().clear().type('новый адресс корреспонденции инспекции')
     })
-
     it('save edited inspections', () => {
         TPage.inspectionsSaveButton().click()
     })
@@ -76,7 +71,10 @@ describe(' inspections crud', () => {
     it('input inspections bank address', () => {
         TPage.inspectionsAddBankAddress().type('Privat address')
     })
-    it('input inspections bank BIC/SWIFT', () => {
+    it('input inspections bank SWIFT', () => {
+        TPage.inspectionsAddBankSwift().type('0123456')
+    })
+    it('input inspections bank BIC', () => {
         TPage.inspectionsAddBankSwift().type('0123456')
     })
     it('save bank account', () => {
@@ -103,8 +101,11 @@ describe(' inspections crud', () => {
     it('input inspectionsCompany bank address', () => {
         TPage.inspectionsAddBankAddress().clear()
     })
-    it('input inspectionsCompany bank BIC/SWIFT', () => {
+    it('edit inspections bank SWIFT', () => {
         TPage.inspectionsAddBankSwift().clear()
+    })
+    it('edit inspections bank BIC', () => {
+        TPage.inspectionsAddBankBic().clear()
     })
     it('save inspectionsCompany account', () => {
         TPage.bankAccSave().click()

@@ -21,18 +21,23 @@ describe(' insuranceCompany crud', () => {
     it('input insuranceCompany  name', () => {
         TPage.insurancetNameInput().type('Alex insuranceCompany #1')
     })
-    it('input insuranceCompany  address', () => {
+    it('input insuranceCompany  legal address', () => {
         TPage.insuranceAddressInput().type('Alex insuranceCompany 1 address')
     })
-    it('input insuranceCompany VAT', () => {
-        TPage.insuranceVatInput().type('01234568')
+
+    it('input insuranceCompany  correspondenceAddress address', () => {
+        TPage.insurancecorrespondenceAddressInput().type('Alex correspondenceAddress 1 address')
     })
     it('input insuranceCompany group', () => {
         TPage.InsuranceAddGroup().type('Alex new group')
     })
-    it('click outside', () => {
-        TPage.insuranceVatInput().click()
-    });
+    it('input insuranceCompany VAT', () => {
+        TPage.insuranceVatInput().type('01234568')
+    })
+
+    // it('click outside', () => {
+    //     TPage.insuranceVatInput().click()
+    // });
 
     it('save insuranceCompany', () => {
         TPage.insurancetAddButton().click()
@@ -57,7 +62,7 @@ describe(' insuranceCompany crud', () => {
         TPage.insuranceAddressInput().clear().type('новый адрес insuranceCompany')
     })
     it('input insuranceCompany group', () => {
-        TPage.InsuranceAddGroup().clear()
+        TPage.InsuranceAddGroup().clear().type('Alex new group#2')
     })
     it('click outside', () => {
         TPage.insuranceVatInput().click()
@@ -76,8 +81,11 @@ describe(' insuranceCompany crud', () => {
     it('input insuranceCompany bank address', () => {
         TPage.insuranceAddBankAddress().type('Privat address')
     })
-    it('input insuranceCompany bank BIC/SWIFT', () => {
-        TPage.insuranceAddBankSwift().type('0123456')
+    it('input insuranceCompany bank BIC', () => {
+        TPage.insuranceAddBankBic().type('0123456')
+    })
+    it('input insuranceCompany bank SWIFT', () => {
+        TPage.insuranceAddBankSwift().type('654321')
     })
     it('save bank account', () => {
         TPage.bankAccSave().click()
@@ -103,7 +111,10 @@ describe(' insuranceCompany crud', () => {
     it('input insuranceCompany bank address', () => {
         TPage.insuranceAddBankAddress().clear()
     })
-    it('input insuranceCompany bank BIC/SWIFT', () => {
+    it('input insuranceCompany bank BIC', () => {
+        TPage.insuranceAddBankBic().clear()
+    })
+    it('input insuranceCompany bank SWIFT', () => {
         TPage.insuranceAddBankSwift().clear()
     })
     it('save insuranceCompany account', () => {
