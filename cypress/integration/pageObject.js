@@ -234,9 +234,7 @@ export class testingPage {
 
   //dictionaryIncoterms
   bodLink = () =>
-    cy.get(
-      '[href="/dashboard/basis-of-deliveries"] > .mat-list-item-content > .ng-star-inserted'
-    );
+    cy.get('[href="/dashboard/basis-of-deliveries/list?qp=0"] > .mat-list-item-content > .ng-star-inserted');
   bodsAdd = () => cy.get(".mat-button-wrapper > span").contains("Добавить");
   bodCostGroupInput = () => cy.get(`input[formcontrolname="groupName"]`);
   bodNameInput = () => cy.get(`input[formcontrolname="costName"]`);
@@ -247,4 +245,85 @@ export class testingPage {
   bodInGrid = () => cy.get("mat-cell");
   bodEditedSave = () =>
     cy.get(".button-container > .mat-focus-indicator").contains(" Coхранить ");
+  bodListName = () => cy.get('.cdk-column-costName > span');
+  bodListGroup = () => cy.get('.cdk-column-groupName  > span');
+  bodListIncoterm = () => cy.get('.cdk-column-incoterm > span');
+  bodFilterIncotermSelector = () => cy.get('.mat-select-placeholder');
+  bodFilterIncotermList = () => cy.get('#mat-select-0-panel')
+
+
+
+//subcompany
+
+  subcompanyLink = () =>
+    cy.get(
+      '[href="/dashboard/sub-companies"] > .mat-list-item-content > .ng-star-inserted'
+    );
+  subcompanyAdd = () => cy.get(".mat-button-wrapper > span").contains("Добавить");
+  subcompanyNameInput = () => cy.get(`input[formcontrolname="name"]`);
+  subcompanyVatInput = () => cy.get(`input[formcontrolname="vatCode"]`);
+  subcompanyAddressInput = () =>
+    cy.get(`textarea[formcontrolname="legalAddress"]`);
+  subcompanyionCorrespondenceAddressInput = () =>
+        cy.get(`textarea[formcontrolname="correspondenceAddress"]`);
+  subcompanyAddGroup = () => cy.get(`input[formcontrolname="groupName"]`);
+  subcompanyAddButton = () =>
+    cy.get(`button[type="submit"]`).contains("Добавить");
+  subcompanyTabHeader = () => cy.get(".mat-card-header").contains("Список");
+  subcompanyInGrid = () => cy.get("[class^=mat-cell]");
+  subcompanySaveButton = () =>
+    cy.get(`button[type="submit"]`).contains(" Coхранить ");
+
+  subcompanyAddBank = () =>
+    cy.get(
+      ".actions > .mat-focus-indicator > .mat-button-wrapper > .mat-icon > #Add-Icon"
+    );
+  subcompanyAddBankName = () => cy.get(".cdk-column-name > .mat-form-field > .mat-form-field-wrapper > .mat-form-field-flexc");
+  subcompanyAddBankSwift = () => cy.get(`input[formcontrolname="swift"]`);
+  subcompanyAddBankBic = () => cy.get(`input[formcontrolname="bic"]`);
+  subcompanyAddBankAddress = () => cy.get(`input[formcontrolname="address"]`);
+  subcompanyBankInGrid = () =>
+    cy.get(".cdk-column-name > .ng-star-inserted");
+  subcompanyBankEditButton = () => cy.get(".btn-edit");
+  subcompanyBankDelete = () =>
+    cy
+      .get(".btn-cancel > .mat-button-wrapper > .mat-icon")
+      .should("be.visible");
+//project
+
+projectLink = () => cy.get('[href="/dashboard/projects/list?qp=0"] > .mat-list-item-content > .ng-star-inserted')
+projectCreateButton = () =>  cy.get(".mat-button-wrapper > span").contains("Добавить");
+projectNameInputField = () => cy.get(`input[formcontrolname="name"]`);
+projectDescriptionNameInputField = () => cy.get(`textarea[formcontrolname="description"]`);
+projectSaveButton =() => cy.get(`button[type="submit"]`).contains("Добавить");
+projectListTabHeader = () => cy.get(".mat-basic-chip").contains("Список");
+projectInGrid = () => cy.get("mat-cell");
+projectEditedSave = () =>
+  cy.get(".button-container > .mat-focus-indicator").contains(" Coхранить ");
+Sub_projectCreateButton = () =>  cy.get('.cdk-column-actions > .mat-focus-indicator > .mat-button-wrapper > .mat-icon');
+Sub_projecttNameInputField = () => cy.get('.cdk-column-name > .mat-form-field > .mat-form-field-wrapper > .mat-form-field-flex')
+Sub_projectAddButton = () => cy.get('.btn-save > .mat-button-wrapper > .mat-icon')
+Sub_projectDescriptionNameInputField = () => cy.get('.truncated > .mat-form-field > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix');
+Sub_projectInGrid = () =>
+  cy.get(".cdk-column-name > .ng-star-inserted");
+Sub_projectEditButton = () => cy.get(".btn-edit");
+Sub_projectDelete = () =>
+  cy
+    .get(".btn-cancel > .mat-button-wrapper > .mat-icon")
+    .should("be.visible");
+  Sub_projectListName = () => cy.get('.mat-table');
+
+
+//contract
+
+  contractsLink = () =>
+    cy.get(
+      '[href="/dashboard/contracts"] > .mat-list-item-content > .ng-star-inserted'
+    );
+  contractsAddButton = () => cy.get('#Add-Icon');
+  contractsProjectSelect = () => cy.get('mat-select[formcontrolname="projectIds"]')
+  contarctsProjectSelect = () => cy.get('#mat-select-4-panel')
+  contractsHeader = () => cy.get('.mat-tab-create > span');
+  contractTypeCheckBox = () => cy.get('input[type="checkbox"]')
+  //contractsProjectAddButton = () => cy.get('.button-container > .mat-focus-indicator')
 }
